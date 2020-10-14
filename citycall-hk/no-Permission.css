@@ -1,0 +1,95 @@
+.no-Permission{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+.no-Permission .containter{	
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform:translate(-50%,-50%);						
+}
+.no-Permission .containter span{
+    display: block;
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+.no-Permission .containter span a{
+    color: #54a1e9;
+}
+.no-Permission .permission-popWindow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.7);
+}
+.no-Permission .permission-popWindow .popWindow{
+    position: absolute;
+    width: 430px;
+    height: 170px;
+    background: #fff;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-top: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.no-Permission .permission-popWindow .popWindow .icon-close{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.no-Permission .permission-popWindow .popWindow .icon-close:before{
+    content: "\e641";
+    font-size: 16px;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt{
+    width: 45px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt:before{
+    content: "\e63f";
+    font-size: 45px;
+    color: #FFCC2E;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt + div{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt + div h3{
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt + div span{
+    font-size: 14px;
+    color: #999999;
+}
+.no-Permission .permission-popWindow .popWindow .icon-prompt ~ button{
+    height: 26px;
+    width: auto;
+    line-height: 24px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0 17px;
+    background: #F4F5F9;
+    border: 1px solid #D0D4D9;
+    cursor: pointer;
+    outline: none;
+}

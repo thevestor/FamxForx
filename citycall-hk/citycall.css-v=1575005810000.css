@@ -1,0 +1,1531 @@
+/*公用样式*/
+.pagebox {
+  height: auto !important;
+}
+.clearBoth {
+  clear:both;
+  width:100%;
+  height:0px;
+  font-size:0;
+  overflow:hidden;
+  line-height:0;
+}
+.l-header {
+  left: 0;
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  z-index: 100;
+}
+#wrapper.transformlate {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+}
+.Scroll_Tr {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+}
+.fegre {
+  transform: scale(0.25, 0.25);
+  top: 10%;
+}
+.soso {
+  background: url(line_x.png)/*tpa=http://www.citycall-hk.com/img/line_x.png*/ no-repeat right 17px;
+  padding-right: 10px;
+}
+.navbar-soso {
+  float: right;
+  height: 17px;
+  line-height: 17px;
+  background: url(soso_bg.png)/*tpa=http://www.citycall-hk.com/img/soso_bg.png*/ no-repeat center center;
+  font-size: 0;
+  width: 17px;
+  margin-top: 10px;
+}
+.navbar-inverse .navbar-nav > li.nav-item > a {
+  margin: 0;
+}
+.navbar-inverse .navbar-nav > li.soso > a {
+  margin-top: 10px;
+}
+/*第一栏CSS*/
+.bs-slide {
+  height: 100vh;
+  max-height:920px;
+}
+.kovant_main01 .btn-group{
+  display:block;
+}
+.kovant_main01 .bs-controls{
+  position:absolute;
+  top:48%;
+  z-index:999;
+  width:100%;
+}
+.kovant_main01 .bs-controls a {
+  background:url(button.png)/*tpa=http://www.citycall-hk.com/img/button.png*/ no-repeat scroll 0 -41px;
+  display: block;
+  height: 41px;
+  position: absolute;
+  top: 50%;
+  width: 23px;
+  font-size: 0;
+}
+.kovant_main01 .bs-controls a:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+.kovant_main01 .bs-controls .bs-prev{
+  left:2%;
+  position: absolute;
+  text-decoration: none;
+}
+.kovant_main01 .bs-controls .bs-next{
+  right:2%;
+  position: absolute;
+  text-decoration: none;
+  background-position: -23px -41px;
+}
+.slide_2b {
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.heading {
+  margin: 10px 0;
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+}
+.bs-vertical-center p a {
+  color: #fff;
+}
+.slide_2b .heading {
+  margin: 10px 0;
+  color: #413d3c;
+  font-size: 60px;
+  font-weight: bold;
+}
+.slide_2b p a {
+  color: #413d3c;
+}
+.heading span {
+  font-size: 48px;
+  font-weight: normal;
+}
+.subheading {
+  margin-top: 0;
+  color: #fff;
+  font-size: 22px;
+  font-weight: normal;
+}
+.slide_2b .subheading {
+  margin-top: 0;
+  color: #5c5a5a;
+  font-size: 22px;
+  font-weight: normal;
+}
+/*第二栏CSS*/
+.kovant_main02 {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+.container-fluid .promo-content{
+  transition: all .4s linear;
+}
+.container-fluid .promo-content:hover{
+  transform: translate3d(0, -5px, 0);
+}
+.container-fluid .pro1 {
+  background: #ffd0d0;
+  position: relative;
+  height: 100%;
+}
+.container-fluid .pro2 {
+  background: url(promo2_bg.jpg)/*tpa=http://www.citycall-hk.com/img/promo2_bg.jpg*/ repeat center center;
+  position: relative;
+  height: 100%;
+}
+.container-fluid .video-promo {
+  background: url(video_bg.png)/*tpa=http://www.citycall-hk.com/img/video_bg.png*/ repeat center center;
+  position: relative;
+  height: 100%;
+}
+.container-fluid .as-background {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  object-position: center center;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.container-fluid .promo-content {
+  -moz-box-align: start;
+  -moz-box-pack: center;
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 1.5625rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+.container-fluid .pro1 .promo-label {
+  position: absolute;
+  left: 6%;
+  top: 5rem;
+  width: 38%;
+}
+.container-fluid .pro2 .promo-label {
+  position: absolute;
+  right: 6%;
+  bottom: 3rem;
+  width: 38%;
+}
+.container-fluid .video-promo .promo-label {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  width: 15%;
+}
+.container-fluid .promo {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  overflow: hidden;
+  display: none;
+}
+@media (max-width: 575px) {
+  .container-fluid .promo {
+    height: 180px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 220px;
+  }
+  .bs-slide{
+    height:27vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:28px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:20px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:18px;
+  }
+  .bs-controls{
+    display:none;
+  }
+}
+@media (min-width: 576px) {
+  .container-fluid .promo {
+    height: 190px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 230px;
+  }
+  .bs-slide{
+    height:66vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:28px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:20px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:18px;
+  }
+  .bs-controls{
+    display:none;
+  }
+}
+@media (min-width: 992px) {
+  .container-fluid .promo {
+    height: 400px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 291px;
+  }
+  .bs-slide{
+    height:70vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:44px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:36px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:22px;
+  }
+  .bs-controls{
+    display:block;
+  }
+}
+@media (min-width: 1200px) {
+  .container-fluid .promo {
+    height: 266px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 352px;
+  }
+  .bs-slide{
+    height:80vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:50px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:40px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:22px;
+  }
+  .bs-controls{
+    display:block;
+  }
+}
+@media (min-width: 1440px) {
+  .container-fluid .promo {
+    height: 320px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 423px;
+  }
+  .bs-slide{
+    height:85vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:54px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:44px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:22px;
+  }
+  .bs-controls{
+    display:block;
+  }
+}
+@media (min-width: 1600px) {
+  .container-fluid .promo {
+    height: 355px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 470px;
+  }
+  .bs-slide{
+    height:85vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:60px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:48px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:22px;
+  }
+  .bs-controls{
+    display:block;
+  }
+}
+@media (min-width: 1920px) {
+  .container-fluid .promo {
+    height: 425px;
+  }
+  .kovant_main03 .container-fluid .section-box-adv {
+    height: 562px;
+  }
+  .bs-slide{
+    height:100vh;
+  }
+  .heading,.slide_2b .heading{
+    font-size:60px;
+  }
+  .heading span,.slide_2b .heading span{
+    font-size:48px;
+  }
+  .subheading,.slide_2b .subheading{
+    font-size:22px;
+  }
+  .bs-controls{
+    display:block;
+  }
+}
+/*第三栏CSS*/
+.kovant_main03 {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+.kovant_main03 .container-fluid .col-lg-12 {
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+.kovant_main03 .container-fluid .box-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-color: #53422b;
+  background-image: url(box_advideo.jpg)/*tpa=http://www.citycall-hk.com/img/box_advideo.jpg*/;
+  position: relative;
+  -moz-box-align: start;
+  -moz-box-pack: center;
+  align-items: flex-start;
+  display: flex;
+}
+.kovant_main03 .container-fluid .main03-label {
+  position: absolute;
+  left: 6%;
+  top: 42%;
+  width: calc((100% - 80px)/2);
+}
+/*第四栏CSS*/
+.kovant_main04 {
+  background-color: #f2f2f3;
+  padding: 1.5625rem 0;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+.kovant_main04 li.prolist {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.product-list {
+  padding-left: 0;
+  list-style: none;
+}
+.kovant_main04 figure {
+  background: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  transition: all .2s linear;
+}
+.kovant_main04 li:hover figure{
+  box-shadow: 0 15px 30px rgba(0,0,0,.1);
+  transform: translate3d(0, -2px, 0);
+}
+.kovant_main04 figcaption {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 98.2%;
+  text-align: center;
+  color: #44403f;
+  font-size: 36px;
+  transition: all .2s linear;
+}
+.kovant_main04 li:hover figcaption{
+  transform: translate3d(0, -2px, 0);
+}
+.kovant_main04 .font{
+  text-align: center;
+}
+.kovant_main04 figure img{
+  border: 0 none;
+  transition: all 1s ease 0s;
+}
+.kovant_main04 li:hover figure img{
+  transform: scale(1.1);
+}
+/*底部菜单CSS*/
+.l-footer {
+  border-top: 1px solid #e0e0e3;
+  background: #fff;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+.l-footer .foot_texttitle {
+  margin-bottom: 1.2rem;
+}
+.l-footer .thumbnail img {
+  text-align: left;
+  display: inline-block;
+}
+.l-footer .nav {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid #e0e0e3;
+}
+.l-footer .nav ul {
+  margin: 0;
+  padding: 0;
+}
+.l-footer .nav li {
+  list-style: none;
+  display: inline-block;
+  line-height: 24px;
+  padding-right: 15px;
+}
+.l-footer .nav a {
+  text-decoration: none;
+  font-family: Helvetica, Arial;
+  color: #7d7d7e;
+}
+.l-footer .nav a:hover {
+  color: #535353;
+}
+.l-footer .nav .current a {
+  background: #999;
+  color: #7d7d7e;
+  border-radius: 5px;
+}
+.l-footer .foot_text01 {
+  padding-bottom: 3%;
+}
+.l-footer .copyright {
+  text-align: center;
+  color: #8d8d8e;
+  padding: 1.2rem 0;
+}
+.l-footer .copyright a {
+  color: #8d8d8e;
+}
+.l-footer .copyright a:hover {
+  color: #535353;
+}
+@media screen and (max-width: 600px) {
+  .l-footer .nav {
+    position: relative;
+    min-height: 40px;
+  }
+  .l-footer .nav ul {
+    padding: 5px 0;
+    border: solid 1px #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+  .l-footer .nav li {
+    display: none;
+    margin: 0;
+  }
+  .l-footer .nav .current {
+    display: block;
+  }
+  .l-footer .nav a {
+    text-align: left;
+    padding-left: 2%
+  }
+  .l-footer .nav .current a {
+    background: none;
+    color: #666;
+  }
+  /* on nav hover */
+  .l-footer .nav ul:hover {
+    background-image: none;
+  }
+  .l-footer .nav ul:hover li {
+    display: block;
+  }
+}
+/*图标css*/
+.main .l-footer .jiathis_txt {
+  margin: 0 10px;
+}
+.l-footer .nav ul.bdsharebuttonbox {
+  margin-top: 4rem;
+}
+.l-footer .nav ul.bdsharebuttonbox li {
+  padding: 0;
+  margin-left: 20px;
+}
+.main .l-footer .bds_weixin {
+  background: url(wx.png)/*tpa=http://www.citycall-hk.com/img/wx.png*/ no-repeat 0 0;
+  width: 28px;
+  height: 28px!important;
+  padding-left: 0!important;
+}
+.main .l-footer .bds_sqq {
+  background: url(qq.png)/*tpa=http://www.citycall-hk.com/img/qq.png*/ no-repeat 0 0;
+  width: 28px;
+  height: 28px!important;
+  padding-left: 0!important;
+}
+.main .l-footer .bds_tsina {
+  background: url(wb.png)/*tpa=http://www.citycall-hk.com/img/wb.png*/ no-repeat 0 0;
+  width: 28px;
+  height: 28px!important;
+  padding-left: 0!important;
+}
+.loading_overlay {
+  height: 0;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10000;
+  background-color: rgba(36,37,38,0.6);
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  cursor: pointer
+}
+.state-visible.loading_overlay {
+  opacity: 1;
+  height: 100%
+}
+.loading_overlay {
+  overflow: hidden;
+  height: 100%;
+  opacity: 1;
+  cursor: default;
+  background-color: #161722;
+  -webkit-transition: height 1.5s 2.3s cubic-bezier(0.78, -0.01, 0, 1.02);
+  -moz-transition: height 1.5s 2.3s cubic-bezier(0.78, -0.01, 0, 1.02);
+  -o-transition: height 1.5s 2.3s cubic-bezier(0.78, -0.01, 0, 1.02);
+  transition: height 1.5s 2.3s cubic-bezier(0.78, -0.01, 0, 1.02)
+}
+.loading_overlay.state-done {
+  -webkit-transition: -webkit-transform 1.5s 2.5s cubic-bezier(0.78, -0.01, 0, 1.02), opacity 0.9s 3.3s ease;
+  -moz-transition: -moz-transform 1.5s 2.5s cubic-bezier(0.78, -0.01, 0, 1.02), opacity 0.9s 3.3s ease;
+  -o-transition: -o-transform 1.5s 2.5s cubic-bezier(0.78, -0.01, 0, 1.02), opacity 0.9s 3.3s ease;
+  transition: transform 1.5s 2.5s cubic-bezier(0.78, -0.01, 0, 1.02), opacity 0.9s 3.3s ease;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  -ms-transform-origin: top;
+  -o-transform-origin: top;
+  transform-origin: top
+}
+.loading_overlay__bubble {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #fd9a9a;
+  -webkit-transform: scale(0) translateZ(0);
+  -moz-transform: scale(0) translateZ(0);
+  transform: scale(0) translateZ(0);
+  -webkit-transition: opacity 0.4s 1.7s ease, -webkit-transform 1.5s 1.7s cubic-bezier(0.78, -0.01, 0, 1.02);
+  -moz-transition: opacity 0.4s 1.7s ease, -moz-transform 1.5s 1.7s cubic-bezier(0.78, -0.01, 0, 1.02);
+  -o-transition: opacity 0.4s 1.7s ease, -o-transform 1.5s 1.7s cubic-bezier(0.78, -0.01, 0, 1.02);
+  transition: opacity 0.4s 1.7s ease, transform 1.5s 1.7s cubic-bezier(0.78, -0.01, 0, 1.02)
+}
+.state-done .loading_overlay__bubble {
+  opacity: 1;
+  -webkit-transform: scale(30) translateZ(0);
+  -moz-transform: scale(30) translateZ(0);
+  transform: scale(30) translateZ(0)
+}
+.loader {
+  position: fixed;
+  z-index: 10;
+  right: 10px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 158px;
+  height: 171px
+}
+@media (max-width: 500px) {
+  .loader {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+    -moz-transform: translate(-50%, -50%) scale(0.5);
+    -ms-transform: translate(-50%, -50%) scale(0.5);
+    -o-transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5)
+  }
+}
+.loader__item {
+  position: absolute;
+  z-index: 10;
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  cursor: pointer;
+  -webkit-transition: background-color .8s ease, border-color 1.3s ease, -webkit-box-shadow .3s, opacity .1s 1s ease;
+  -moz-transition: background-color .8s ease, border-color 1.3s ease, -moz-box-shadow .3s, opacity .1s 1s ease;
+  -o-transition: background-color .8s ease, border-color 1.3s ease, box-shadow .3s, opacity .1s 1s ease;
+  transition: background-color .8s ease, border-color 1.3s ease, box-shadow .3s, opacity .1s 1s ease;
+  -webkit-animation: blinking 1.3s ease-out infinite;
+  -moz-animation: blinking 1.3s ease-out infinite;
+  -o-animation: blinking 1.3s ease-out infinite;
+  animation: blinking 1.3s ease-out infinite
+}
+.loader__item:before, .loader__item:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: 3px;
+  width: 3px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #e62129;
+  -webkit-transition: background-color 1s ease, opacity .8s ease;
+  -moz-transition: background-color 1s ease, opacity .8s ease;
+  -o-transition: background-color 1s ease, opacity .8s ease;
+  transition: background-color 1s ease, opacity .8s ease
+}
+.loader__item:after {
+  opacity: 0;
+  border: 6px solid #5c71f3
+}
+.state-done .loader__item {
+  opacity: 0;
+  background-color: #1b8bf9
+}
+.state-done .loader__item:before {
+  background-color: white
+}
+.state-done .loader__item:nth-child(1) {
+  -webkit-transition: background-color 1.2s 0ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 0ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 0ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 0ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(2) {
+  -webkit-transition: background-color 1.2s 70ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 70ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 70ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 70ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(3) {
+  -webkit-transition: background-color 1.2s 140ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 140ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 140ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 140ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(4) {
+  -webkit-transition: background-color 1.2s 210ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 210ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 210ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 210ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(5) {
+  -webkit-transition: background-color 1.2s 280ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 280ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 280ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 280ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(6) {
+  -webkit-transition: background-color 1.2s 350ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 350ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 350ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 350ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+
+
+.state-done .loader__item:nth-child(7) {
+  -webkit-transition: background-color 1.2s 420ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 420ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 420ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 420ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(8) {
+  -webkit-transition: background-color 1.2s 490ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 490ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 490ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 490ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(9) {
+  -webkit-transition: background-color 1.2s 560ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 560ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 560ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 560ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(10) {
+  -webkit-transition: background-color 1.2s 630ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 630ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 630ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 630ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(11) {
+  -webkit-transition: background-color 1.2s 700ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 700ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 700ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 700ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(12) {
+  -webkit-transition: background-color 1.2s 770ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 770ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 770ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 770ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(13) {
+  -webkit-transition: background-color 1.2s 840ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 840ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 840ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 840ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(14) {
+  -webkit-transition: background-color 1.2s 910ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 910ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 910ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 910ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(15) {
+  -webkit-transition: background-color 1.2s 980ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 980ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 980ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 980ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(16) {
+  -webkit-transition: background-color 1.2s 1050ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1050ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1050ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1050ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(17) {
+  -webkit-transition: background-color 1.2s 1120ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1120ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1120ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1120ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(18) {
+  -webkit-transition: background-color 1.2s 1190ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1190ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1190ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1190ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(19) {
+  -webkit-transition: background-color 1.2s 1260ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1260ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1260ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1260ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(20) {
+  -webkit-transition: background-color 1.2s 1330ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1330ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1330ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1330ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(21) {
+  -webkit-transition: background-color 1.2s 1400ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1400ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1400ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1400ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(22) {
+  -webkit-transition: background-color 1.2s 1470ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1470ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1470ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1470ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(23) {
+  -webkit-transition: background-color 1.2s 1540ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1540ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1540ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1540ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(24) {
+  -webkit-transition: background-color 1.2s 1610ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1610ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1610ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1610ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.state-done .loader__item:nth-child(25) {
+  -webkit-transition: background-color 1.2s 1680ms ease, border-color 1.3s ease, -webkit-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -moz-transition: background-color 1.2s 1680ms ease, border-color 1.3s ease, -moz-box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  -o-transition: background-color 1.2s 1680ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease;
+  transition: background-color 1.2s 1680ms ease, border-color 1.3s ease, box-shadow 0.3s, opacity 0.3s 1.6s ease
+}
+.loader__item--1 {
+  top: 1px;
+  right: 0;
+  left: 0;
+  margin: auto
+}
+.loader__item--2 {
+  top: 6px;
+  left: 48px
+}
+.loader__item--3 {
+  top: 17px;
+  left: 30px
+}
+.loader__item--4 {
+  top: 31px;
+  left: 16px
+}
+.loader__item--5 {
+  top: 48px;
+  left: 6px
+}
+.loader__item--6 {
+  top: 68px;
+  left: 0px
+}
+.loader__item--7 {
+  top: 89px;
+  left: 0px
+}
+.loader__item--8 {
+  top: 110px;
+  left: 6px
+}
+.loader__item--9 {
+  top: 127px;
+  left: 16px
+}
+.loader__item--10 {
+  top: 142px;
+  left: 31px
+}
+.loader__item--11 {
+  top: 153px;
+  left: 49px
+}
+.loader__item--12 {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto
+}
+.loader__item--22 {
+  top: 6px;
+  right: 48px
+}
+.loader__item--23 {
+  top: 17px;
+  right: 30px
+}
+.loader__item--24 {
+  top: 31px;
+  right: 16px
+}
+.loader__item--25 {
+  top: 48px;
+  right: 6px
+}
+.loader__item--26 {
+  top: 68px;
+  right: 0px
+}
+.loader__item--27 {
+  top: 89px;
+  right: 0px
+}
+.loader__item--28 {
+  top: 110px;
+  right: 6px
+}
+.loader__item--29 {
+  top: 127px;
+  right: 16px
+}
+.loader__item--210 {
+  top: 142px;
+  right: 31px
+}
+.loader__item--211 {
+  top: 153px;
+  right: 49px
+}
+.loader__item--212 {
+  bottom: 0;
+  right: 0
+}
+.loader__item:nth-child(1) {
+  -webkit-animation-delay: 155ms;
+  -moz-animation-delay: 155ms;
+  -o-animation-delay: 155ms;
+  animation-delay: 155ms
+}
+.loader__item:nth-child(2) {
+  -webkit-animation-delay: 310ms;
+  -moz-animation-delay: 310ms;
+  -o-animation-delay: 310ms;
+  animation-delay: 310ms
+}
+.loader__item:nth-child(3) {
+  -webkit-animation-delay: 465ms;
+  -moz-animation-delay: 465ms;
+  -o-animation-delay: 465ms;
+  animation-delay: 465ms
+}
+.loader__item:nth-child(4) {
+  -webkit-animation-delay: 620ms;
+  -moz-animation-delay: 620ms;
+  -o-animation-delay: 620ms;
+  animation-delay: 620ms
+}
+.loader__item:nth-child(5) {
+  -webkit-animation-delay: 775ms;
+  -moz-animation-delay: 775ms;
+  -o-animation-delay: 775ms;
+  animation-delay: 775ms
+}
+.loader__item:nth-child(6) {
+  -webkit-animation-delay: 930ms;
+  -moz-animation-delay: 930ms;
+  -o-animation-delay: 930ms;
+  animation-delay: 930ms
+}
+.loader__item:nth-child(7) {
+  -webkit-animation-delay: 1085ms;
+  -moz-animation-delay: 1085ms;
+  -o-animation-delay: 1085ms;
+  animation-delay: 1085ms
+}
+.loader__item:nth-child(8) {
+  -webkit-animation-delay: 1240ms;
+  -moz-animation-delay: 1240ms;
+  -o-animation-delay: 1240ms;
+  animation-delay: 1240ms
+}
+.loader__item:nth-child(9) {
+  -webkit-animation-delay: 1395ms;
+  -moz-animation-delay: 1395ms;
+  -o-animation-delay: 1395ms;
+  animation-delay: 1395ms
+}
+.loader__item:nth-child(10) {
+  -webkit-animation-delay: 1550ms;
+  -moz-animation-delay: 1550ms;
+  -o-animation-delay: 1550ms;
+  animation-delay: 1550ms
+}
+.loader__item:nth-child(11) {
+  -webkit-animation-delay: 1705ms;
+  -moz-animation-delay: 1705ms;
+  -o-animation-delay: 1705ms;
+  animation-delay: 1705ms
+}
+.loader__item:nth-child(12) {
+  -webkit-animation-delay: 1860ms;
+  -moz-animation-delay: 1860ms;
+  -o-animation-delay: 1860ms;
+  animation-delay: 1860ms
+}
+.loader__item:nth-child(13) {
+  -webkit-animation-delay: 2015ms;
+  -moz-animation-delay: 2015ms;
+  -o-animation-delay: 2015ms;
+  animation-delay: 2015ms
+}
+.loader__item:nth-child(14) {
+  -webkit-animation-delay: 2170ms;
+  -moz-animation-delay: 2170ms;
+  -o-animation-delay: 2170ms;
+  animation-delay: 2170ms
+}
+.loader__item:nth-child(15) {
+  -webkit-animation-delay: 2325ms;
+  -moz-animation-delay: 2325ms;
+  -o-animation-delay: 2325ms;
+  animation-delay: 2325ms
+}
+.loader__item:nth-child(16) {
+  -webkit-animation-delay: 2480ms;
+  -moz-animation-delay: 2480ms;
+  -o-animation-delay: 2480ms;
+  animation-delay: 2480ms
+}
+.loader__item:nth-child(17) {
+  -webkit-animation-delay: 2635ms;
+  -moz-animation-delay: 2635ms;
+  -o-animation-delay: 2635ms;
+  animation-delay: 2635ms
+}
+.loader__item:nth-child(18) {
+  -webkit-animation-delay: 2790ms;
+  -moz-animation-delay: 2790ms;
+  -o-animation-delay: 2790ms;
+  animation-delay: 2790ms
+}
+.loader__item:nth-child(19) {
+  -webkit-animation-delay: 2945ms;
+  -moz-animation-delay: 2945ms;
+  -o-animation-delay: 2945ms;
+  animation-delay: 2945ms
+}
+.loader__item:nth-child(20) {
+  -webkit-animation-delay: 3100ms;
+  -moz-animation-delay: 3100ms;
+  -o-animation-delay: 3100ms;
+  animation-delay: 3100ms
+}
+.loader__item:nth-child(21) {
+  -webkit-animation-delay: 3255ms;
+  -moz-animation-delay: 3255ms;
+  -o-animation-delay: 3255ms;
+  animation-delay: 3255ms
+}
+.loader__item:nth-child(22) {
+  -webkit-animation-delay: 3410ms;
+  -moz-animation-delay: 3410ms;
+  -o-animation-delay: 3410ms;
+  animation-delay: 3410ms
+}
+.loader__item:nth-child(23) {
+  -webkit-animation-delay: 3565ms;
+  -moz-animation-delay: 3565ms;
+  -o-animation-delay: 3565ms;
+  animation-delay: 3565ms
+}
+.loader__item:nth-child(24) {
+  -webkit-animation-delay: 3720ms;
+  -moz-animation-delay: 3720ms;
+  -o-animation-delay: 3720ms;
+  animation-delay: 3720ms
+}
+.loader__item:nth-child(25) {
+  -webkit-animation-delay: 3875ms;
+  -moz-animation-delay: 3875ms;
+  -o-animation-delay: 3875ms;
+  animation-delay: 3875ms
+}
+.loader__item:nth-child(1) {
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  -o-transition-delay: 0ms;
+  transition-delay: 0ms
+}
+.loader__item:nth-child(2) {
+  -webkit-transition-delay: 70ms;
+  -moz-transition-delay: 70ms;
+  -o-transition-delay: 70ms;
+  transition-delay: 70ms
+}
+.loader__item:nth-child(3) {
+  -webkit-transition-delay: 140ms;
+  -moz-transition-delay: 140ms;
+  -o-transition-delay: 140ms;
+  transition-delay: 140ms
+}
+.loader__item:nth-child(4) {
+  -webkit-transition-delay: 210ms;
+  -moz-transition-delay: 210ms;
+  -o-transition-delay: 210ms;
+  transition-delay: 210ms
+}
+.loader__item:nth-child(5) {
+  -webkit-transition-delay: 280ms;
+  -moz-transition-delay: 280ms;
+  -o-transition-delay: 280ms;
+  transition-delay: 280ms
+}
+.loader__item:nth-child(6) {
+  -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
+  transition-delay: 350ms
+}
+.loader__item:nth-child(7) {
+  -webkit-transition-delay: 420ms;
+  -moz-transition-delay: 420ms;
+  -o-transition-delay: 420ms;
+  transition-delay: 420ms
+}
+.loader__item:nth-child(8) {
+  -webkit-transition-delay: 490ms;
+  -moz-transition-delay: 490ms;
+  -o-transition-delay: 490ms;
+  transition-delay: 490ms
+}
+.loader__item:nth-child(9) {
+  -webkit-transition-delay: 560ms;
+  -moz-transition-delay: 560ms;
+  -o-transition-delay: 560ms;
+  transition-delay: 560ms
+}
+.loader__item:nth-child(10) {
+  -webkit-transition-delay: 630ms;
+  -moz-transition-delay: 630ms;
+  -o-transition-delay: 630ms;
+  transition-delay: 630ms
+}
+.loader__item:nth-child(11) {
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms
+}
+.loader__item:nth-child(12) {
+  -webkit-transition-delay: 770ms;
+  -moz-transition-delay: 770ms;
+  -o-transition-delay: 770ms;
+  transition-delay: 770ms
+}
+.loader__item:nth-child(13) {
+  -webkit-transition-delay: 840ms;
+  -moz-transition-delay: 840ms;
+  -o-transition-delay: 840ms;
+  transition-delay: 840ms
+}
+.loader__item:nth-child(14) {
+  -webkit-transition-delay: 910ms;
+  -moz-transition-delay: 910ms;
+  -o-transition-delay: 910ms;
+  transition-delay: 910ms
+}
+.loader__item:nth-child(15) {
+  -webkit-transition-delay: 980ms;
+  -moz-transition-delay: 980ms;
+  -o-transition-delay: 980ms;
+  transition-delay: 980ms
+}
+.loader__item:nth-child(16) {
+  -webkit-transition-delay: 1050ms;
+  -moz-transition-delay: 1050ms;
+  -o-transition-delay: 1050ms;
+  transition-delay: 1050ms
+}
+.loader__item:nth-child(17) {
+  -webkit-transition-delay: 1120ms;
+  -moz-transition-delay: 1120ms;
+  -o-transition-delay: 1120ms;
+  transition-delay: 1120ms
+}
+.loader__item:nth-child(18) {
+  -webkit-transition-delay: 1190ms;
+  -moz-transition-delay: 1190ms;
+  -o-transition-delay: 1190ms;
+  transition-delay: 1190ms
+}
+.loader__item:nth-child(19) {
+  -webkit-transition-delay: 1260ms;
+  -moz-transition-delay: 1260ms;
+  -o-transition-delay: 1260ms;
+  transition-delay: 1260ms
+}
+.loader__item:nth-child(20) {
+  -webkit-transition-delay: 1330ms;
+  -moz-transition-delay: 1330ms;
+  -o-transition-delay: 1330ms;
+  transition-delay: 1330ms
+}
+.loader__item:nth-child(21) {
+  -webkit-transition-delay: 1400ms;
+  -moz-transition-delay: 1400ms;
+  -o-transition-delay: 1400ms;
+  transition-delay: 1400ms
+}
+.loader__item:nth-child(22) {
+  -webkit-transition-delay: 1470ms;
+  -moz-transition-delay: 1470ms;
+  -o-transition-delay: 1470ms;
+  transition-delay: 1470ms
+}
+.loader__item:nth-child(23) {
+  -webkit-transition-delay: 1540ms;
+  -moz-transition-delay: 1540ms;
+  -o-transition-delay: 1540ms;
+  transition-delay: 1540ms
+}
+.loader__item:nth-child(24) {
+  -webkit-transition-delay: 1610ms;
+  -moz-transition-delay: 1610ms;
+  -o-transition-delay: 1610ms;
+  transition-delay: 1610ms
+}
+.loader__item:nth-child(25) {
+  -webkit-transition-delay: 1680ms;
+  -moz-transition-delay: 1680ms;
+  -o-transition-delay: 1680ms;
+  transition-delay: 1680ms
+}
+@-webkit-keyframes blinking {
+  0% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  50% {
+    border-color:#e62129;
+    -webkit-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    :before {
+      background-color:white
+    }
+  }
+  100% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+}
+@-moz-keyframes blinking {
+  0% {
+    border-color:transparent;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  50% {
+    border-color:#e62129;
+    -moz-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    :before {
+      background-color:white
+    }
+  }
+  100% {
+    border-color:transparent;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+}
+@-o-keyframes blinking {
+
+  0% {
+    border-color:transparent;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  50% {
+    border-color:#e62129;
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    :before {
+      background-color:white
+    }
+  }
+  100% {
+    border-color:transparent;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+}
+@keyframes blinking {
+  0% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  50% {
+    border-color:#e62129;
+    -webkit-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    -moz-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    :before {
+      background-color:white
+    }
+  }
+  100% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+}
+@-webkit-keyframes final_blinking {
+  0% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  100% {
+    border-color:#5c71f3;
+    -webkit-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4)
+  }
+}
+@-moz-keyframes final_blinking {
+  0% {
+    border-color:transparent;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  100% {
+    border-color:#5c71f3;
+    -moz-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4)
+  }
+}
+@-o-keyframes final_blinking {
+  0% {
+    border-color:transparent;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  100% {
+    border-color:#5c71f3;
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4)
+  }
+}
+@keyframes final_blinking {
+  0% {
+    border-color:transparent;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    :before {
+      background-color:#e62129
+    }
+  }
+  100% {
+    border-color:#5c71f3;
+    -webkit-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    -moz-box-shadow:1px 1.7px 4px rgba(64,69,73,0.4);
+    box-shadow:1px 1.7px 4px rgba(64,69,73,0.4)
+  }
+}
+.loader__logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: auto;
+  width:110px;
+}
+.loader__logo__img {
+  width: 100%
+}
+.press {
+  text-align: center;
+  padding-bottom: 105px;
+  background-color: white
+}
+.press__title {
+  margin-bottom: 86px
+}
+@media (max-width: 992px) {
+  .press__title {
+    margin-bottom: 60px
+  }
+}
+.press__box:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both
+}
+.press__item {
+  display: inline-block;
+  vertical-align: middle
+}
+.press__item {
+  text-decoration: none
+}
+.press__item:hover {
+  color: inherit
+}
+.press__item:hover, .press__item:active, .press__item:visited, .press__item:focus {
+  text-decoration: none
+}
+@media (min-width: 501px) {
+  .press__item {
+    margin: 0 20px 50px
+  }
+}
+@media (max-width: 1024px) {
+  .press__item {
+    margin: 0 50px 50px
+  }
+}
+@media (max-width: 767px) {
+  .press__item {
+    display: block;
+    margin-bottom: 60px
+  }
+  .press__item:last-child {
+    margin-bottom: 0
+  }
+}
+@media (max-width: 500px) {
+  .press__item {
+    margin-bottom: 50px
+  }
+  .press__item:last-child {
+    margin-bottom: 50px
+  }
+}
+/*遮罩效果*/
+.block-revealer__element {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	pointer-events: none;
+	opacity: 0;
+}
+.block-revealer__content{
+    height:100%;
+}
