@@ -94,6 +94,12 @@ public class linkedQueue<E> {
 	public int size() {
 		return size;
 	}
+	public E getRear() {
+		if(!isEmpty()) {
+			return rear.data;
+		}
+		return null;
+	}
 	/**
 	 * Title: test class
 	 * @author FamxForx
@@ -111,14 +117,26 @@ public class linkedQueue<E> {
 		System.out.println("\n ------------------- \n");
 
 		
+		System.out.println("get rear value:" + queue.getRear());
+		System.out.println("\n --------------------- \n");
+		
 		queue.pop();
-		System.out.println(queue);
+		System.out.println("delete the head value:" + queue);
 		System.out.println("\n ------------------- \n");
 		
 		
-		System.out.println(queue.peek());
+		System.out.println("get head value is:" + queue.peek());
 		queue.put(121);
 		System.out.println(queue);
+		System.out.println("\n -------------------- \n");
+		
+		System.out.println("queue`s length is:" + queue.size);
+		System.out.println("\n ---------------------- \n");
+		
+		System.out.println("queue is empty?:" + queue.isEmpty());
+		System.out.println("\n ------------- \n");
+		
+
 	}
 	@Override
 	public String toString() {
