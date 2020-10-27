@@ -15,6 +15,9 @@
 *  Others:                                                                                                                                                    
 **********************************************************************************************************/
 package String;
+
+import java.util.Arrays;
+
 /**
  * Title:创建一个字符串数组，实现插入值，以及删除等操作
  * @author FamxForx
@@ -22,10 +25,11 @@ package String;
  */
 public class SeqString implements IString{
 	/**
-	 * @descrption 自定义数组空间，以及串的长度
+	 * @descrption 自定义数组空间，串的长度
 	 * @param curLen
 	 * 
 	 */
+	
 	private char[] strValue;   //字符数组存放串值
 	private int curLen;         //当前串的长度
 	/**
@@ -88,7 +92,7 @@ public class SeqString implements IString{
 	 * @param newcapacity
 	 */
 	public void allocate(int newcapacity){   
-        char[]temp=strValue;
+       char[]temp=strValue;
 		strValue=new char[newcapacity];
 		for(int i=0;i<temp.length;i++)
 			strValue[i]=temp[i];
@@ -108,7 +112,7 @@ public class SeqString implements IString{
 		else{
 			char[]buffer=new char[end-begin];
 			for(int i=0;i<buffer.length;i++)
-				buffer[i]=this.strValue[i+begin];
+				buffer[i]=strValue[i+begin];
 			return new SeqString(buffer);
 		}
 	}
@@ -116,7 +120,7 @@ public class SeqString implements IString{
 	 * @descrption 在第offset字符之前插入str
 	 */
 	public IString insert(int offset,IString str){   
-		if(offset<0||offset>this.curLen)
+		if(offset<0||offset>curLen)
 			throw new StringIndexOutOfBoundsException("插入位置不合法");
 		int len=str.length();
 		int newcount=len+curLen;
@@ -134,6 +138,7 @@ public class SeqString implements IString{
 	/**
 	 * @descrption 删除从begin从end-1为止的字串
 	 */
+	
 	public SeqString delete(int begin,int end){   
 		for(int i=0;i<curLen-end;i++)
 			strValue[begin+i]=strValue[end+i];
@@ -163,7 +168,7 @@ public class SeqString implements IString{
 		return len1-len2;
 	}
 	/**
-	 * @descrption 将数组的值插入到串中
+	 * @descrption 将数组的值插入到串中,合并字串
 	 */
 	public IString concat(IString str){
 		return insert(curLen,str);
@@ -176,6 +181,75 @@ public class SeqString implements IString{
 			System.out.print(strValue[i]);
 		}
 		System.out.println();
+	}
+	/**
+	 * @description kmp算法实现字符串匹配
+	 * @param pattern
+	 * @param next
+	 */
+	public static int[] getNext(String pattern) {
+		int[] next = new int[pattern.length()];//创建一个和数组长度一样的部分匹配值表
+		int k = -1;
+		int j = 0;
+		next[0] = -1;
+		//检测每一个字符之前的字符串，计算它们前后缀的最大长度，然后把长度记录在当前的next数组位置当中
+		while(j < pattern.length() - 1) {
+			if(k == -1 || pattern.charAt(k) == pattern.charAt(j) ) {
+				++j;
+				++k;
+				//if主要处理ABCABC这种情况
+				if(pattern.charAt(k) == pattern.charAt(j)) {
+					next[j] = next[k];
+				}else {
+					next[j] = k;
+				}
+			}else {
+				k = next[k];//前缀长度需要缩减
+			}
+			
+		}
+		return next;
+	}
+	public static int kmp(String s,String pattern) {
+		int i = 0;
+		int j = 0;
+		int[] next = getNext(pattern);
+		System.out.println(Arrays.toString(next));
+		while(i < s.length() && j < pattern.length()) {
+			//S  ABCER
+			//P  CD
+			if(j == -1 || s.charAt(i) == pattern.charAt(j)) {
+				i++;
+				j++;
+			}else {
+				j = next[j];
+			}
+			if(j == pattern.length()) {
+				return i - j;
+			}else {
+				return -1;
+			}
+		}
+		return -1;
+	}
+	//在原始串中，寻找字串pattern，如果找到，返回pattern在str串中首字母的下标值，字串没有找到，返回-1
+	private static int find(String s,String pattern) {
+		int i = 0;
+		int j = 0;
+		while(i < s.length() && j < pattern.length()) {
+			if(s.charAt(i) == pattern.charAt(j)) {
+				i++;
+				j++;
+			}else {
+				i = i - j + 1;
+				j = 0;
+			}
+		}
+		if( j == pattern.length()) {
+			return i - j;
+		}else {
+			return -1;
+		}
 	}
 	/**
 	 * @descrption 测试类
@@ -201,7 +275,15 @@ public class SeqString implements IString{
 		s1.delete(1, 3).myprint();
 		System.out.println("截取s3的第1到第2个字符");
 		s3.substring(1, 3).myprint();
+		System.out.println("当前串s1与str比较?" + s1.compareTo(s2));
+		System.out.println("合并串s2与串s3");
+		s3.concat(s2).myprint();
 		
+		String str = "ABCDABDEYGF";
+        String pattern = "ABCDABD";
+        //SeqString.kmp(str, pattern);
+        System.out.println(SeqString.kmp(str, pattern));
+
 	}
 
 

@@ -17,8 +17,8 @@
 package String;
 
 /**
- * @descrption 串的抽象数据类型使用java接口描述
- * @author FamxForx
+ * Title: 串的抽象数据类型使用java接口描述
+ * @author FamxForx 
  * @create 2020-10 
  */
 public interface IString {
