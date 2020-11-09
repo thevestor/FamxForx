@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <title>无权限提示页</title> 
+  <!--组件级样式--> 
+  <link rel="stylesheet" type="text/css" href="no-Permission.css" tppabs="http://www.citycall-hk.com/public/css/auth/no-Permission.css">
+  <script type="text/javascript">
+   $(function(){
+      if(interwords){
+      	$(".no-Permission h3").text(interwords.prompt);
+        $(".no-Permission span").text(interwords.auth.operationNoPer);
+        $(".no-Permission button").text(interwords.cancel);
+      }
+      $(".no-Permission button,.icon-close").on("click",function(){
+         $.dialogMgr.remove();
+      })
+      
+   })
+  </script>
+ </head> 
+ <body> 
+ <div class="no-Permission">
+    <div class="permission-popWindow">
+      <div class="popWindow">
+        <i class="iconfont icon-close"></i>
+        <div>
+          <i class="iconfont icon-prompt"></i>
+          <div>
+            <h3>温馨提示</h3>
+            <span>对不起，您无权限做此操作！</span>
+          </div>
+          <button>取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <script type="text/javascript"  src="su_new.js" tppabs="https://idm-su.baidu.com/su_new.js"></script>
+</body>
+</html>

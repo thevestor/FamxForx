@@ -1,4 +1,3 @@
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,6 +16,10 @@ class Node{
 		System.out.print(dData);
 		System.out.print("}");
 	}
+	public char[] find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 //public class Node {
 // 		person p1; // 参考person对象
@@ -32,19 +35,26 @@ public class BinaryTree{
 	public BinaryTree(){
 		root = null;
 	}
-	public Node find(int key){ // 查询结点并给它赋值（在确保不是空树得情况下）
+	public Node find(int key){ // 查询结点并给它赋值（在确保不是空树得情况下）,key表示要寻找得结点
 		Node current = root;//定义根节点
 		while(current.iData != key){//遍历，若不匹配根结点，则说明有孩子
 			if(key < current.iData)//若关键字值小于跟结点关键字值，则要找得结点肯定在树得左部分中--可能是根得左子结点，否则是右子结点。
+			{
 				current = current.leftChild;
-			else
+			}
+			else if(key > current.iData)
+			{
 				current = current.rightChild;
+			}
 			if(current == null)//如果没有孩子，则没有找到
 				return null;
 		}
 		return current;//返回找到得关键字
 	}
-	public void insert(int id,double dd){
+	public Node getLeftChild(int key) {
+		return root.leftChild;
+	}
+	 public void insert(int id,double dd){
 		Node newNode = new Node();//创建一个新节点
 		newNode.iData = id;//插入主值
 		newNode.dData = dd;//插入其他数据值
@@ -77,38 +87,38 @@ public class BinaryTree{
 	public void preOrder(Node localRoot){
 		if(localRoot != null)//如果树不为空
 		{
-			System.out.println(localRoot.iData + " ");//访问该结点
-			System.out.println(localRoot.leftChild);//调用自身遍历结点得左子树
-			System.out.println(localRoot.rightChild);//调用自身白能力结点得右子树
+			System.out.print(localRoot.iData + " ");//访问该结点
+			preOrder(localRoot.leftChild);//调用自身遍历结点得左子树
+			preOrder(localRoot.rightChild);//调用自身白能力结点得右子树
 		}
 	}
 	//中序遍历（A*(B + C)）
 	public void inOrder(Node localRoot){//开始时用根作为参数调用这个方法inOrder(root)；之后实现递归过程，直到所有结点都被访问为止
 		if(localRoot != null)//如果树不为空
 		{
-			System.out.println(localRoot.leftChild);//调用自身遍历结点得左子树
-			System.out.println(localRoot.iData + " ");//访问该结点
-			System.out.println(localRoot.rightChild);//调用自身白能力结点得右子树
+			inOrder(localRoot.leftChild);//调用自身遍历结点得左子树
+			System.out.print(localRoot.iData + " ");//访问该结点
+			inOrder(localRoot.rightChild);//调用自身白能力结点得右子树
 		}
 	}
 	//后序遍历(ABC++)
 	public void postOrder(Node localRoot) {
 		if (localRoot != null) {//如果树不为空
-			System.out.println(localRoot.leftChild);//调用自身遍历结点得左子树
-			System.out.println(localRoot.rightChild);//调用自身白能力结点得右子树
-			System.out.println(localRoot.iData + " ");//访问该结点
+			postOrder(localRoot.leftChild);//调用自身遍历结点得左子树
+			postOrder(localRoot.rightChild);//调用自身白能力结点得右子树
+			System.out.print(localRoot.iData + " ");//访问该结点
 		}
 	}
 	//层次遍历
 	public void traverse(int traverseType){
 		switch(traverseType){
-			case 1: System.out.println("\n preOrder travesal: ");
+			case 1: System.out.print("\n preOrder travesal: ");
 					preOrder(root);
 					break;
-			case 2: System.out.println("\n inOrder travesal: ");
+			case 2: System.out.print("\n inOrder travesal: ");
 					inOrder(root);
 					break;
-			case 3: System.out.println("\n postOrder travesal: ");
+			case 3: System.out.print("\n postOrder travesal: ");
 			        postOrder(root);
 			        break;
 		}
@@ -135,9 +145,9 @@ public class BinaryTree{
 		//找到结点并删除，若没有找到，则继续执行delete()函数，如果没有孩子，直接删除根结点
 		if(current.leftChild == null && current.rightChild == null)
 		{
-			if(current == null) //如果只有根结点，则树为空
+			if(current == root)
 				root = null;
-			else if(isLeftChild)
+			if(isLeftChild)
 				parent.leftChild = null; //没有关联
 			else //从双亲结点开始
 				parent.rightChild = null;
@@ -216,7 +226,7 @@ public class BinaryTree{
 				Node temp = (Node)globalStack.pop();
 				if(temp != null)
 				{
-					System.out.println(temp.iData);
+					System.out.print(temp.iData);
 					localStack.push(temp.leftChild);
 					localStack.push(temp.rightChild);
 					if(temp.leftChild != null || temp.rightChild != null)
@@ -249,7 +259,7 @@ public class BinaryTree{
 		}
 		return last;
 	}
-	public Node maximum(){ //返回最小关键字值（即左孩子得值）
+	public Node maximum(){ //返回最大关键字值（即右孩子得值）
 		Node current;
 		Node last = new Node();
 		current = root;
@@ -276,15 +286,16 @@ public class BinaryTree{
 		tree.insert(93,1.5);
 		tree.insert(97,1.5);
 
+
 //		下列遍历得程序介绍:
 //		可用得命令是字母s、i、f、d和t，分别用于显示、插入、查找、删除和遍历。i、f和d选项需要输入要操作结点得关键之。t选项要用户选择遍历得方式：
 //		1.是前序遍历，2.是中序遍历，3.是后序遍历。关键字值就按用户选择得遍历顺序显示出来。
 //		显示方法可以把关键之按树形排列展示出来;但需要设想边得存在。两个短线符号（--）表示树中这个位置得结点不存在。程序初始化时创建一些结点，
-//		用户在没有做任何插入操作之前就可以看到它们。可以修改初始化得代码，从需要得任何结点开始，或没有任何结点（这是一种良好得状态）。
+//		用户在没有做任何插入操作之前就可以看到它们。可以修改初始化得代码，从需要得任何结点开始，或没有任何结点（这是一种良好得状态）。x
 		while(true)
 		{
-			System.out.println("Enter the first letter of show");
-			System.out.println("insert,find,delete,or traverse:");
+			System.out.print("Enter the first letter of show,");
+			System.out.print("insert,find,delete,or traverse:");
 			int choice = getChar();
 			switch (choice)
 			{
@@ -292,45 +303,43 @@ public class BinaryTree{
 					tree.displayTree();
 					break;
 				case 'i':
-					System.out.println("Enter value to insert:");
+					System.out.print("Enter value to insert:");
 					value = getInt();
 					tree.insert(value,value + 0.9);
 					break;
 				case 'f':
-					System.out.println("Enter value to find:");
+					System.out.print("Enter value to find:");
 					value = getInt();
 					Node found = tree.find(value);
 					if(found != null)
 					{
-						System.out.println("Found:");
+						System.out.print("Found:");
 						found.displayNode();
-						System.out.println("\n");
+						System.out.print("\n");
 					}
 					else
 					{
-						System.out.println("Could not found");
-						System.out.println(value + '\n');
+						System.out.print("Could not found \n");
+						System.out.print(value + '\n');
 					}
 					break;
 				case 'd':
-					System.out.println("Enter value to delete:");
+					System.out.print("Enter value to delete:");
 					value = getInt();
 					boolean didDelete = tree.delete(value);
 					if(didDelete)
-						System.out.println("Deleted" + value + '\n');
+						System.out.print("Deleted:" + value + '\n');
 					else
-						System.out.println("Could not delete");
-						System.out.println(value + '\n');
-					value = getInt();
-					tree.traverse(value);
+						System.out.print("Could not delete");
+						System.out.print(value + '\n');
 					break;
 				case 't':
-					System.out.println("Enter type 1,2 or 3:");
+					System.out.print("Enter type 1,2 or 3:");
 					value = getInt();
 					tree.traverse(value);
 					break;
 				default:
-					System.out.println("Invalid entry\n");
+					System.out.print("Invalid entry\n");
 			}
 		}
 	}
@@ -351,3 +360,4 @@ public class BinaryTree{
 	}
 
 }
+
