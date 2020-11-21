@@ -1,48 +1,41 @@
 package BinTree;
-/**
- * Title: 结点类 
- * Description: 二叉树的结点
- * 
- * @author FamxForx
- * @created 2020年11月1日
- */
-public class Node<T> {
-	T data;   // 结点数据
-	Node<T> left;  // 指向左孩子结点
-	Node<T> right;  // 指向右孩子结点
-	boolean isFirst;  // 用于非递归后序遍历
-	
-	
-	/**
-	 * 构造函数
-	 * 
-	 * @description 构造一个新结点
-	 * @author FamxForx
-	 * @created 2020年11月1日
-	 * @param data
-	 *            新元素数据
-	 * @param next
-	 *            新元素与链表结合结点
-	 */
-	public Node(T data) { 
+
+public class TreeNode<E> {
+	private E data;  //数据域
+	private TreeNode<E> lchild;  //左孩子
+	private TreeNode<E> rchild;  //右孩子
+
+	TreeNode(E e){
+		this.data = e;
+	}
+
+	TreeNode(E data,TreeNode<E> lchild, TreeNode<E> rchild){
+		this.data = data;
+		this.lchild = lchild;
+		this.rchild = rchild;
+	}
+
+	public void setData(E data){
 		this.data = data;
 	}
 
-	@Override
-	public String toString() {
-		return data == null ? null : data.toString();
+	public E getData(){
+		return this.data;
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		if (obj instanceof Node) {
-			Node<T> temp = (Node<T>) obj;
-			if (data.equals(temp.data)) {
-				return true;
-			}
-		}
-		return false;
+	public void setLchild(TreeNode<E> lchild){
+		this.lchild = lchild;
+	}
+
+	public TreeNode<E> getLchild(){
+		return this.lchild;
+	}
+
+	public void setRchild(TreeNode<E> rchild){
+		this.rchild = rchild;
+	}
+
+	public TreeNode<E> getRchild(){
+		return this.rchild;
 	}
 }

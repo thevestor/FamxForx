@@ -55,6 +55,24 @@ public class BinaryTree{
 		}
 		return current;//返回找到得关键字
 	}
+//	public Node leftChild(int key){
+//		Node temp = root;
+//		while (temp.iData != key)
+//		{
+//			find(key);
+//			temp = temp.leftChild;
+//		}
+//		return temp.leftChild;
+//	}
+//	public Node rightChild(int key)
+//	{
+//		Node rCur = root.leftChild;
+//		while (rCur.iData != key) {
+//			find(key);
+//			rCur = rCur.rightChild;
+//		}
+//		return rCur.rightChild;
+//	}
 	 public void insert(int id,double dd){
 		Node newNode = new Node();//创建一个新节点
 		newNode.iData = id;//插入主值
@@ -291,8 +309,8 @@ public class BinaryTree{
 		tree.insert(97,1.5);
 
 		//tree.displayTree();
-		System.out.println("最大数值："+tree.maximum().iData + "," + tree.maximum().dData);
-		System.out.println("最小数值："+tree.minimum().iData + "," + tree.minimum().dData);
+		System.out.println("左孩子的值："+tree.maximum().iData + "," + tree.maximum().dData);
+		System.out.println("右孩子的值："+tree.minimum().iData + "," + tree.minimum().dData);
 		System.out.println("根结点的值:" + tree.getRoot().iData + "," + tree.getRoot().dData);
 
 //		Node found2 = tree.find(25);
@@ -329,6 +347,12 @@ public class BinaryTree{
 						System.out.print("Found:");
 						found.displayNode();
 						System.out.print("\n");
+//						System.out.print("Found the node`s left child:");
+//						lChild.displayNode();
+//						System.out.print("\n");
+//						System.out.print("Found the node`s right child:");
+//						rChild.displayNode();
+//						System.out.print("\n");
 					}
 					else
 					{
