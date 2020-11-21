@@ -3,6 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+/**
+ * Title: Node类
+ * @description 利用数组表示树的结构，用存储在数组中相对的位置来表示结点在树中的位置。
+ */
 class Node{
 	public int iData; // 这个数据被用于表示主值
 	public double dData; // 其他数据
@@ -51,9 +55,6 @@ public class BinaryTree{
 		}
 		return current;//返回找到得关键字
 	}
-	public Node getLeftChild(int key) {
-		return root.leftChild;
-	}
 	 public void insert(int id,double dd){
 		Node newNode = new Node();//创建一个新节点
 		newNode.iData = id;//插入主值
@@ -84,7 +85,7 @@ public class BinaryTree{
 		}
 	}
 	//前序遍历（*A+BC）
-	public void preOrder(Node localRoot){
+	public void preOrder(Node localRoot){//开始时用根作为参数调用这个方法inOrder(root)；之后实现递归过程，直到所有结点都被访问为止
 		if(localRoot != null)//如果树不为空
 		{
 			System.out.print(localRoot.iData + " ");//访问该结点
@@ -102,7 +103,7 @@ public class BinaryTree{
 		}
 	}
 	//后序遍历(ABC++)
-	public void postOrder(Node localRoot) {
+	public void postOrder(Node localRoot) {//开始时用根作为参数调用这个方法inOrder(root)；之后实现递归过程，直到所有结点都被访问为止
 		if (localRoot != null) {//如果树不为空
 			postOrder(localRoot.leftChild);//调用自身遍历结点得左子树
 			postOrder(localRoot.rightChild);//调用自身白能力结点得右子树
@@ -270,6 +271,9 @@ public class BinaryTree{
 		}
 		return last;
 	}
+	public Node getRoot(){
+		return root;
+	}
 	public static void main(String[] args) throws IOException {
 		int value;
 		BinaryTree tree = new BinaryTree();//创建一个树
@@ -286,12 +290,21 @@ public class BinaryTree{
 		tree.insert(93,1.5);
 		tree.insert(97,1.5);
 
+		//tree.displayTree();
+		System.out.println("最大数值："+tree.maximum().iData + "," + tree.maximum().dData);
+		System.out.println("最小数值："+tree.minimum().iData + "," + tree.minimum().dData);
+		System.out.println("根结点的值:" + tree.getRoot().iData + "," + tree.getRoot().dData);
 
-//		下列遍历得程序介绍:
-//		可用得命令是字母s、i、f、d和t，分别用于显示、插入、查找、删除和遍历。i、f和d选项需要输入要操作结点得关键之。t选项要用户选择遍历得方式：
+//		Node found2 = tree.find(25);
+//		if(found2 != null)
+//			System.out.println("Found the node with 25");
+//		else
+//			System.out.println("Could not found node with key 25");
+//		下列选择程序介绍:
+//		可用得命令是字母s、i、f、t，分别用于显示、插入、查找、遍历。i、f选项需要输入要操作结点得关键之。t选项要用户选择遍历得方式：
 //		1.是前序遍历，2.是中序遍历，3.是后序遍历。关键字值就按用户选择得遍历顺序显示出来。
 //		显示方法可以把关键之按树形排列展示出来;但需要设想边得存在。两个短线符号（--）表示树中这个位置得结点不存在。程序初始化时创建一些结点，
-//		用户在没有做任何插入操作之前就可以看到它们。可以修改初始化得代码，从需要得任何结点开始，或没有任何结点（这是一种良好得状态）。x
+//		用户在没有做任何插入操作之前就可以看到它们。可以修改初始化得代码，从需要得任何结点开始，或没有任何结点。
 		while(true)
 		{
 			System.out.print("Enter the first letter of show,");
@@ -322,16 +335,6 @@ public class BinaryTree{
 						System.out.print("Could not found \n");
 						System.out.print(value + '\n');
 					}
-					break;
-				case 'd':
-					System.out.print("Enter value to delete:");
-					value = getInt();
-					boolean didDelete = tree.delete(value);
-					if(didDelete)
-						System.out.print("Deleted:" + value + '\n');
-					else
-						System.out.print("Could not delete");
-						System.out.print(value + '\n');
 					break;
 				case 't':
 					System.out.print("Enter type 1,2 or 3:");
