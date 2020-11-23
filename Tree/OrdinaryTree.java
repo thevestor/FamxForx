@@ -37,7 +37,7 @@ class Node{
 		return parent;
 	}
 	public boolean isLeaf(){
-		return (childArray[0] == null)?true : false;
+		return (childArray[0] == null) ?true : false;
 	}
 	public int getNumItems(){
 		return numItems;
@@ -173,7 +173,7 @@ public class OrdinaryTree {
 		recDisplayTree(root,0,0);
 	}
 	public void recDisplayTree(Node thisNode,int level,int childNumber) {
-		System.out.println("level="+level+"child="+childNumber+ " ");
+		System.out.print("level="+level+"child="+childNumber+ " ");
 		thisNode.displayNode();
 		int numItems = thisNode.getNumItems();
 		for(int j = 0;j < numItems + 1;j++) {
@@ -217,14 +217,14 @@ public class OrdinaryTree {
 				int found = theTree.find(value);
 				if(found != -1)
 				{
-					System.out.println("Found" + value);
+					System.out.print("Found" + value);
 				}
 				else {
-					System.out.println("Could not find" + value);
+					System.out.print("Could not find" + value);
 				}
 				break;
 			default:
-				System.out.println("Invalid entry\n");
+				System.out.print("Invalid entry\n");
 			}
 		}
 	}
