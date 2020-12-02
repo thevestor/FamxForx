@@ -1,8 +1,5 @@
 package HuffTree;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 //哈夫曼编码：实现无损压缩
@@ -15,8 +12,8 @@ public class HuffManTree {
 		this.root = root;
 	}
 	//前序遍历
-	public void preOrderTraversal() {
-		System.out.println("\n================= 前序遍历结果为 =================");
+	public void preOrderTravesal() {
+		System.out.println("\n================= PreOrderTraversal =================");
 		if(root != null)
 			root.preOrderTraversal();
 		else
@@ -55,8 +52,7 @@ public class HuffManTree {
 			Node leftNode = arrayList.get(0);
 			Node rightNode = arrayList.get(1);
 			Node parentNode = new Node(leftNode.getWeight() + rightNode.getWeight());
-
-			//引用孩子结点
+			
 			parentNode.setLeftNode(leftNode);
 			parentNode.setRightNode(rightNode);
 			
@@ -67,7 +63,7 @@ public class HuffManTree {
 		}
 		return arrayList.get(0);
 	} 
-	//找到字符串的编码，0为左孩子,1为右孩子（在非空树的情况下）
+	//找到字符串的编码
 	public Map<Byte,String> getCode(Node root){
 		if(root == null)
 		{
@@ -100,7 +96,7 @@ public class HuffManTree {
 	}
 	//将字符串转换成对用的哈夫曼编码，只需要传入需要转换的字符串即可
 	public StringBuilder getStringHuffmanCode(String str) {
-		System.out.println("\n ======================= 创建的哈夫曼编码为: ==============");
+		System.out.println("\n ======================= Create strings is: ==============");
 		byte[] str2bytes = str.getBytes();
 		StringBuilder res = new StringBuilder();
 		//1.创建哈夫曼树
@@ -110,7 +106,7 @@ public class HuffManTree {
 		setRoot(root);
 		
 		//3.获取每个字符对应的哈夫曼编码
-		Map<Byte,String> huffmanCodes = getCode(root);
+		Map<Byte,String> getHuffmanCode = getCode(root);
 		
 		//4.根据键来查询 对应字符的哈夫曼编码，再进行组装，得到该字符串对应的哈夫曼编码
 		for(byte b : str2bytes) {
@@ -120,7 +116,7 @@ public class HuffManTree {
 	}
 	//打印编码
 	public void printHuffmanCode(Map<Byte,String> hashMap) {
-		System.out.println("\n ============ 打印哈夫曼树 =================");
+		System.out.println("\n ============ printHuffmanCode =================");
 		@SuppressWarnings("rawtypes")
 		Iterator iter = hashMap.entrySet().iterator();
 		while(iter.hasNext()) {
@@ -131,8 +127,8 @@ public class HuffManTree {
 			System.out.println(key + "--" + val);
 		}
 	}
-	public static void main(String[] args) throws IOException {
-		String str = "ABABDACABBAADDABCD";
+	public static void main(String[] args) {
+		String str = "i like like like java do like a java";
         //将字符串换换成ascII
         byte[] str2byte = str.getBytes();
 
@@ -144,46 +140,17 @@ public class HuffManTree {
         //2、设置赫夫曼树的root
         huffmanEncode.setRoot(root);
 
-        while(true)
-		{
-			System.out.println("Enter the first letter of");
-			System.out.println("print,traversal,getCoding:");
-			char choice = getChar();
-			switch (choice){
-				case 't':
-					//前序遍历赫夫曼树
-					huffmanEncode.preOrderTraversal();
-					break;
-				case 'p':
-					//3、获得每个字符对应的赫夫曼编码,打印哈夫曼树
-					Map<Byte,String> getHuffmanCode = huffmanEncode.getCode(root);
-					huffmanEncode.printHuffmanCode(getHuffmanCode);
-					break;
-				case 'g':
-					//4、获取字符串的赫夫曼编码：只需要传入需要转换的字符串即可
-					StringBuilder res = huffmanEncode.getStringHuffmanCode(str);
-					System.out.println(res);
-					break;
-				default:
-					System.out.print("Invalid entry\n");
-					break;
-			}
-		}
+        //前序遍历赫夫曼树
+        huffmanEncode.preOrderTravesal();
+
+        //3、获得每个字符对应的赫夫曼编码
+        Map<Byte,String> getHuffmanCode = huffmanEncode.getCode(root);
+        huffmanEncode.printHuffmanCode(getHuffmanCode);
+
+        //4、获取字符串的赫夫曼编码：只需要传入需要转换的字符串即可
+        StringBuilder res = huffmanEncode.getStringHuffmanCode(str);
+        System.out.println(res);
     }
-	//异常处理
-	public static String getString() throws IOException{
-		InputStreamReader isr = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(isr);
-		String s = br.readLine();
-		return s;
-	}
-	public static char getChar() throws IOException{
-		String s = getString();
-		return s.charAt(0);
-	}
-	public static int getInt() throws IOException{
-		String s = getString();
-		return Integer.parseInt(s);
-	}
+
 }
 

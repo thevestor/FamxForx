@@ -7,17 +7,17 @@
 *  In case of code problems, feedback can be made through the following email address.                  
 *                                   <s1074862962@gmail.com> or <s1074862962@163.com>                                                 
 *                                                                                                        
-*  FileName:  BalancedParan                                                                         
+*  FileName:  ForEachQueue                                                                         
 *  Author:  FamxForx                                                                                     
 *  Version:  2.2                                                                                         
 *  Date:  2020                                                                                     
-*  Title: paranthesis are balanced                                                              
+*  Title: Ñ­»·¶ÓÁĞ                                                              
 *  Others:                                                                                                                                                    
 **********************************************************************************************************/
 package queue;
 
 /**
- * Title: å¾ªç¯é˜Ÿåˆ—
+ * Title: Ñ­»·¶ÓÁĞ
  * @author FamxForx
  * @create 2020
  */
@@ -25,7 +25,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * @brief åˆ©ç”¨æ•°ç»„å¾ªç¯é˜Ÿåˆ—
+ * @brief ÀûÓÃÊı×éÑ­»·¶ÓÁĞ
  * @author Deemo
  * @create 2020
  * @param <E>
@@ -37,7 +37,7 @@ public class ForEachQueue<E> implements QueueNode<E> {
     private int size;
     
     /**
-     * @brief æŒ‡å®šå®¹é‡ï¼Œåˆå§‹åŒ–é˜Ÿåˆ—å¤§å°ï¼ˆç”±äºå¾ªç¯é˜Ÿåˆ—éœ€è¦æµªè´¹ä¸€ä¸ªç©ºé—´ï¼Œæ‰€ä»¥æˆ‘ä»¬åˆå§‹åŒ–é˜Ÿåˆ—çš„æ—¶å€™ï¼Œè¦å°†ç”¨æˆ·ä¼ å…¥çš„å®¹é‡åŠ 1ï¼‰
+     * @brief Ö¸¶¨ÈİÁ¿£¬³õÊ¼»¯¶ÓÁĞ´óĞ¡£¨ÓÉÓÚÑ­»·¶ÓÁĞĞèÒªÀË·ÑÒ»¸ö¿Õ¼ä£¬ËùÒÔÎÒÃÇ³õÊ¼»¯¶ÓÁĞµÄÊ±ºò£¬Òª½«ÓÃ»§´«ÈëµÄÈİÁ¿¼Ó1£©
      * @author FamxForx
      * @param capacity
      */
@@ -49,7 +49,7 @@ public class ForEachQueue<E> implements QueueNode<E> {
         size = 0;
     }
     /**
-     * @brief æ¨¡å¼å®¹é‡ï¼Œåˆå§‹åŒ–é˜Ÿåˆ—å¤§å°
+     * @brief Ä£Ê½ÈİÁ¿£¬³õÊ¼»¯¶ÓÁĞ´óĞ¡
      * @author FamxForx
      */
     public ForEachQueue(){
@@ -79,13 +79,13 @@ public class ForEachQueue<E> implements QueueNode<E> {
         return size;
     }
     /**
-     * @brief å…¥é˜Ÿï¼Œè‹¥é˜Ÿæ»¡äº†ï¼Œåˆ™æ‰©å®¹ä¸¤å€ 
+     * @brief Èë¶Ó£¬Èô¶ÓÂúÁË£¬ÔòÀ©ÈİÁ½±¶ 
      * @author FamxForx
      */
     @Override
     public void enqueue(E e){
-    	// æ£€æŸ¥é˜Ÿåˆ—ä¸ºæ»¡
-        //é˜Ÿåˆ—æ»¡äº† è¿›è¡Œæ‰©å®¹
+    	// ¼ì²é¶ÓÁĞÎªÂú
+        //¶ÓÁĞÂúÁË ½øĞĞÀ©Èİ
         if((tail + 1) % data.length == front)
             resize(getCapacity() * 2);
 
@@ -94,7 +94,7 @@ public class ForEachQueue<E> implements QueueNode<E> {
         size ++;
     }
     /**
-     * @brief å‡ºé˜Ÿï¼Œè‹¥é˜Ÿåˆ—çš„æ•°æ®çš„å€¼èƒ½è¢«é™¤å°½ï¼Œåˆ™ç¼©å®¹
+     * @brief ³ö¶Ó£¬Èô¶ÓÁĞµÄÊı¾İµÄÖµÄÜ±»³ı¾¡£¬ÔòËõÈİ
      * @author FamxForx
      * @return 
      */
@@ -103,22 +103,22 @@ public class ForEachQueue<E> implements QueueNode<E> {
 
         if(isEmpty())
             throw new IllegalArgumentException("Cannot dequeue from an empty queue.");
-        //å‡ºé˜Ÿå…ƒç´ 
+        //³ö¶ÓÔªËØ
         E ret = data[front];
-        //å…ƒç´ å‡ºé˜Ÿåï¼Œå°†ç©ºé—´ç½®ä¸ºnull
+        //ÔªËØ³ö¶Óºó£¬½«¿Õ¼äÖÃÎªnull
         data[front] = null;
-        //ç»´æŠ¤frontçš„ç´¢å¼•ä½ç½®ï¼ˆå¾ªç¯é˜Ÿåˆ—ï¼‰
+        //Î¬»¤frontµÄË÷ÒıÎ»ÖÃ£¨Ñ­»·¶ÓÁĞ£©
         front = (front + 1) % data.length;
-        //ç»´æŠ¤sizeå¤§å°
+        //Î¬»¤size´óĞ¡
         size --;
-        //å…ƒç´ å‡ºé˜Ÿåï¼Œå¯ä»¥æŒ‡å®šæ¡ä»¶ï¼Œè¿›è¡Œç¼©å®¹
+        //ÔªËØ³ö¶Óºó£¬¿ÉÒÔÖ¸¶¨Ìõ¼ş£¬½øĞĞËõÈİ
         if(size == getCapacity() / 4 && getCapacity() / 2 != 0)
             resize(getCapacity() / 2);
         return ret;
     }
     
     /**
-     * @brief åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©ºï¼Œå¦åˆ™è¿”å›é˜Ÿå¤´çš„å€¼
+     * @brief ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ£¬·ñÔò·µ»Ø¶ÓÍ·µÄÖµ
      * @author FamxForx
      * @return 
      */
@@ -128,31 +128,31 @@ public class ForEachQueue<E> implements QueueNode<E> {
             throw new IllegalArgumentException("Queue is empty.");
         return data[front];
     }
-    //é˜Ÿåˆ—å¿«æ»¡æ—¶ï¼Œé˜Ÿåˆ—æ‰©å®¹ï¼›å…ƒç´ å‡ºé˜Ÿæ“ä½œï¼ŒæŒ‡å®šæ¡ä»¶å¯ä»¥è¿›è¡Œç¼©å®¹
+    //¶ÓÁĞ¿ìÂúÊ±£¬¶ÓÁĞÀ©Èİ£»ÔªËØ³ö¶Ó²Ù×÷£¬Ö¸¶¨Ìõ¼ş¿ÉÒÔ½øĞĞËõÈİ
     private void resize(int newCapacity){
 
         @SuppressWarnings("unchecked")
-     // è¿™é‡Œçš„åŠ 1è¿˜æ˜¯å› ä¸ºå¾ªç¯é˜Ÿåˆ—æˆ‘ä»¬åœ¨å®é™…ä½¿ç”¨çš„è¿‡ç¨‹ä¸­è¦æµªè´¹ä¸€ä¸ªç©ºé—´
+     // ÕâÀïµÄ¼Ó1»¹ÊÇÒòÎªÑ­»·¶ÓÁĞÎÒÃÇÔÚÊµ¼ÊÊ¹ÓÃµÄ¹ı³ÌÖĞÒªÀË·ÑÒ»¸ö¿Õ¼ä
 		E[] newData = (E[])new Object[newCapacity + 1];
         for(int i = 0 ; i < size ; i ++)
-        	// æ³¨æ„è¿™é‡Œçš„å†™æ³•ï¼šå› ä¸ºåœ¨æ•°ç»„ä¸­ï¼Œfront å¯èƒ½ä¸æ˜¯åœ¨ç´¢å¼•ä¸º0çš„ä½ç½®ï¼Œç›¸å¯¹äºiæœ‰ä¸€ä¸ªåç§»é‡
+        	// ×¢ÒâÕâÀïµÄĞ´·¨£ºÒòÎªÔÚÊı×éÖĞ£¬front ¿ÉÄÜ²»ÊÇÔÚË÷ÒıÎª0µÄÎ»ÖÃ£¬Ïà¶ÔÓÚiÓĞÒ»¸öÆ«ÒÆÁ¿
             newData[i] = data[(i + front) 	% data.length];
-     // å°†æ–°çš„æ•°ç»„å¼•ç”¨èµ‹äºˆåŸæ•°ç»„çš„æŒ‡å‘
+     // ½«ĞÂµÄÊı×éÒıÓÃ¸³ÓèÔ­Êı×éµÄÖ¸Ïò
         data = newData;
-     // å……å€¼frontçš„ä½ç½®ï¼ˆfrontæ€»æ˜¯æŒ‡å‘é˜Ÿåˆ—ä¸­ç¬¬ä¸€ä¸ªå…ƒç´ ï¼‰
+     // ³äÖµfrontµÄÎ»ÖÃ£¨front×ÜÊÇÖ¸Ïò¶ÓÁĞÖĞµÚÒ»¸öÔªËØ£©
         front = 0;
-     // size çš„å¤§å°ä¸å˜ï¼Œå› ä¸ºåœ¨è¿™è¿‡ç¨‹ä¸­ï¼Œæ²¡æœ‰å…ƒç´ å…¥é˜Ÿå’Œå‡ºé˜Ÿ
+     // size µÄ´óĞ¡²»±ä£¬ÒòÎªÔÚÕâ¹ı³ÌÖĞ£¬Ã»ÓĞÔªËØÈë¶ÓºÍ³ö¶Ó
         tail = size;
     }
 
     @Override
     public String toString(){
-    	//åˆ›å»ºå¯¹è±¡å¹¶å›æ”¶å¯¹è±¡
+    	//´´½¨¶ÔÏó²¢»ØÊÕ¶ÔÏó
         StringBuilder res = new StringBuilder();
-        //å°†é˜Ÿåˆ—ä»¥æ•°ç»„çš„å½¢å¼æ’åˆ—æ‰“å°è¾“å‡º
+        //½«¶ÓÁĞÒÔÊı×éµÄĞÎÊ½ÅÅÁĞ´òÓ¡Êä³ö
         res.append(String.format("Queue: size = %d , capacity = %d\n", size, getCapacity()));
         res.append("front [");
-        //éå†æ¯ä¸€ä¸ªå…¥é˜Ÿçš„å€¼
+        //±éÀúÃ¿Ò»¸öÈë¶ÓµÄÖµ
         for(int i = front ; i != tail ; i = (i + 1) % data.length){
             res.append(data[i]);
             if((i + 1) % data.length != tail)
@@ -163,14 +163,14 @@ public class ForEachQueue<E> implements QueueNode<E> {
     }
 
     /**
-     * @brief æµ‹è¯•ç±»ï¼ˆé“¾å¼é˜Ÿåˆ—ï¼‰
+     * @brief ²âÊÔÀà£¨Á´Ê½¶ÓÁĞ£©
      * @author FamxForx
      * @param args
      */
     public static void main(String[] args){
-    	//åˆ›å»ºè‡ªå®šä¹‰å¯¹è±¡
+    	//´´½¨×Ô¶¨Òå¶ÔÏó
         ForEachQueue<Integer> queue = new ForEachQueue<Integer>(5);
-        //å› ä¸ºæ¨¡å¼å®¹é‡ä¸º10ï¼Œåˆ™éå†å…¥é˜Ÿ
+        //ÒòÎªÄ£Ê½ÈİÁ¿Îª10£¬Ôò±éÀúÈë¶Ó
         for(int i = 0 ; i < 10 ; i ++){
             queue.enqueue(i);
             System.out.println(queue);
@@ -180,13 +180,13 @@ public class ForEachQueue<E> implements QueueNode<E> {
                 System.out.println(queue);
             }
         }        
-        //ä¼˜å…ˆé˜Ÿåˆ—è‡ªç„¶æ’åºä¹‹util
+        //ÓÅÏÈ¶ÓÁĞ×ÔÈ»ÅÅĞòÖ®util
         Queue<Integer> naturePriorityQueue = new PriorityQueue<>(10);
         for (int i = 0; i < 10; i++) {
             int random = (int) (Math.random() * 100 + 1);
             System.out.println("add i value = " + random);
             naturePriorityQueue.add(random);
-            //è‹¥é˜Ÿåˆ—ä¸ºç©ºï¼Œåˆ™æŠ›å‡ºNullPointExceptionå¼‚å¸¸æ“ä½œ 
+            //Èô¶ÓÁĞÎª¿Õ£¬ÔòÅ×³öNullPointExceptionÒì³£²Ù×÷ 
             Integer peek = naturePriorityQueue.peek();
             System.out.println("poll i value = " + peek);
             System.out.println();

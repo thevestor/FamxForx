@@ -7,18 +7,18 @@
 *  In case of code problems, feedback can be made through the following email address.                  
 *                                   <s1074862962@gmail.com> or <s1074862962@163.com>                                                 
 *                                                                                                        
-*  FileName:  BalancedParan                                                                         
+*  FileName:  linkedQueue                                                                         
 *  Author:  FamxForx                                                                                     
 *  Version:  2.2                                                                                         
 *  Date:  2020                                                                                     
-*  Title: paranthesis are balanced                                                              
+*  Title: Based on linklist to create Queue                                                             
 *  Others:                                                                                                                                                    
 **********************************************************************************************************/
 package queue;
 
 
 /**
- * @Title Based on linklist to realize created Queue
+ * @Title Based on linklist to create Queue
  * @author FamxForx
  * @create 2020Äê 
  * @param <E>
@@ -28,12 +28,13 @@ public class linkedQueue<E> {
 	private Node<E> head;//Team leader pointer
 	private Node<E> rear;//Rear of the team pointer
 	
+	
 	private int size;//Queue size
 	public linkedQueue() {
 		head = rear = new Node<E>(null);
 	}
 	/**
-	 * @brief  Import Element to Team rear
+	 * @brief  Import Element to rear
 	 * @author FamxForx
 	 * @param data
 	 * @create 2020Äê
@@ -47,7 +48,7 @@ public class linkedQueue<E> {
 	}
 	
 	/**
-	 * @brief If queue have not value,delete Team leader and return Team leader Element value
+	 * @brief If queue have not value,delete front and return rear Element value
 	 * @author FamxForx
 	 * @return
 	 */
@@ -77,7 +78,6 @@ public class linkedQueue<E> {
 		}
 		return null;
 	}
-	
 	/**
 	 * @brief Estimate queue have not value
 	 * @author FamxForx
@@ -115,12 +115,8 @@ public class linkedQueue<E> {
 		queue.put(0);
 		System.out.println(queue);
 		System.out.println("\n ------------------- \n");
-
 		
-		System.out.println("get rear value:" + queue.getRear());
-		System.out.println("\n --------------------- \n");
-		
-		queue.pop();
+				queue.pop();
 		System.out.println("delete the head value:" + queue);
 		System.out.println("\n ------------------- \n");
 		
@@ -130,14 +126,19 @@ public class linkedQueue<E> {
 		System.out.println(queue);
 		System.out.println("\n -------------------- \n");
 		
+		System.out.println("get rear value:" + queue.getRear());
+		System.out.println("\n --------------------- \n");
+		
+
+		
+		
 		System.out.println("queue`s length is:" + queue.size);
 		System.out.println("\n ---------------------- \n");
 		
 		System.out.println("queue is empty?:" + queue.isEmpty());
 		System.out.println("\n ------------- \n");
 		
-
-	}
+			}
 	@Override
 	public String toString() {
 		Node<E> cur = head.next;

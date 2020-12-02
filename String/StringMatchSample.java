@@ -1,17 +1,4 @@
 package String;
-
-/**
- * 字符串匹配Sample
- * <p>
- * 匹配算法:<br>
- * 1. 暴力匹配<br>
- * 2. <a href="http://blog.csdn.net/v_july_v/article/details/7041827">KMP匹配 </a>
- * </br>
- * 3. 改进KMP匹配<br>
- * 
- * @author Tianma
- *
- */
 public class StringMatchSample {
 
 	private interface StringMatcher {
@@ -126,7 +113,6 @@ public class StringMatchSample {
 	/**
 	 * 优化的KMP算法(对next数组的获取进行优化)
 	 * 
-	 * @author Tianma
 	 *
 	 */
 	static class OptimizedKMPStringMatcher extends KMPStringMatcher {
@@ -154,7 +140,7 @@ public class StringMatchSample {
 						// 不能出现p[j] = p[next[j]],所以如果出现这种情况则继续递归,如 k = next[k],
 						// k = next[[next[k]]
 						next[j] = next[k];
-					}
+					}	
 				} else {
 					k = next[k];
 				}
@@ -170,7 +156,7 @@ public class StringMatchSample {
 		matcher = new KMPStringMatcher();
 		System.out.println(matcher.indexOf("helloworld", "ow"));
 		matcher = new OptimizedKMPStringMatcher();
-		System.out.println(matcher.indexOf("helloworld", "ow"));
+		System.out.println(matcher.indexOf("helloworld", "wo"));
 	}
 
 }

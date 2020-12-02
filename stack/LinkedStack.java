@@ -1,3 +1,19 @@
+/*********************************************************************************************************
+*  Copyright (c) 2020 FamxForx. All rights reserved.                                                     
+*  The following code is only used for learning and communication, not for illegal and commercial use.   
+*  If the code is used, no consent is required, but the author has nothing to do with any problems and   
+*  -consequences.                                                                                       
+*                                                                                                        
+*  In case of code problems, feedback can be made through the following email address.                  
+*                                   <s1074862962@gmail.com> or <s1074862962@163.com>                                                 
+*                                                                                                        
+*  FileName:  BalancedParan                                                                         
+*  Author:  FamxForx                                                                                     
+*  Version:  2.2                                                                                         
+*  Date:  2020                                                                                     
+*  Title: paranthesis are balanced                                                              
+*  Others:                                                                                                                                                    
+**********************************************************************************************************/
 package stack;
 
 import java.util.Comparator;
@@ -47,7 +63,7 @@ public class LinkedStack<E> {
 	
 	/**     
 	 * @description 压栈操作,使用最小值栈
-	 * @author FamxForx       
+1	 * @author FamxForx       
 	 * @param data     
 	 */
 	public void push(E data, Comparator<? super E> c) {
@@ -165,7 +181,12 @@ public class LinkedStack<E> {
 		return sb.toString();
 	}
 	
-	
+	/**
+	 * Title 测试类
+	 * @author FamxForx
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 			
 		LinkedStack<Integer> stack = new LinkedStack<Integer>();

@@ -7,25 +7,19 @@
 *  In case of code problems, feedback can be made through the following email address.                  
 *                                   <s1074862962@gmail.com> or <s1074862962@163.com>                                                 
 *                                                                                                        
-*  FileName:  QueueNode                                                                         
+*  FileName:  BalancedParan                                                                         
 *  Author:  FamxForx                                                                                     
 *  Version:  2.2                                                                                         
 *  Date:  2020                                                                                     
-*  Title: create queue and initQueue                                                             
+*  Title: paranthesis are balanced                                                              
 *  Others:                                                                                                                                                    
 **********************************************************************************************************/
-package queue;
+package stack;
 
-/**
- * @brief create queue and initQueue
- * @author FamxForx
- * @param <E>
- */
-public interface QueueNode<E> {
-	int getSize();//获取队列的长度
-	boolean isEmpty();//判断队列是否为空
-	void enqueue(E e);//入队
-	E dequeue();//出队
-	E getFront();//获取队首的元素
+public interface SStack<T> {
 	
+	boolean isEmpty();//判断是否为空
+	void push(T x);//元素x入栈
+	T pop();//出栈
+	T get();//取栈顶元素未出栈
 }

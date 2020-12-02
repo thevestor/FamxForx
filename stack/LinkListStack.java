@@ -24,7 +24,7 @@ public class LinkListStack<E>{
 		}
 		return stack.pop();
 	}
-	
+
 	@Override
 	public String toString() {
 		return stack.toString();
@@ -34,8 +34,6 @@ public class LinkListStack<E>{
 		LinkListStack <String> stack = new LinkListStack<String>();
 		stack.push("{");
 		stack.push("}");
-		
-		System.out.println(stack);
 		
 		stack.pop();
 		System.out.println(stack);

@@ -7,25 +7,36 @@
 *  In case of code problems, feedback can be made through the following email address.                  
 *                                   <s1074862962@gmail.com> or <s1074862962@163.com>                                                 
 *                                                                                                        
-*  FileName:  QueueNode                                                                         
+*  FileName:  BalancedParan                                                                         
 *  Author:  FamxForx                                                                                     
 *  Version:  2.2                                                                                         
 *  Date:  2020                                                                                     
-*  Title: create queue and initQueue                                                             
+*  Title: paranthesis are balanced                                                              
 *  Others:                                                                                                                                                    
 **********************************************************************************************************/
-package queue;
+package linkedlist;
 
-/**
- * @brief create queue and initQueue
- * @author FamxForx
- * @param <E>
- */
-public interface QueueNode<E> {
-	int getSize();//获取队列的长度
-	boolean isEmpty();//判断队列是否为空
-	void enqueue(E e);//入队
-	E dequeue();//出队
-	E getFront();//获取队首的元素
-	
+public class Node {
+	private Object data;
+	private Node next;
+	public Node() {
+		this.data = null;
+		this.next = null;
+	}
+	public Node(Object data) {
+		this.data = data;
+		this.next = null;
+	}
+	public  Object getData() {
+		return data;
+	}
+	public void setData(Object data) {
+		this.data = data;
+	}
+	public Node getNext() {
+		return next;
+	}
+	public void setNext(Node next) {
+		this.next = next;
+	}
 }
