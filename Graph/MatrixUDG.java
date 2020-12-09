@@ -3,12 +3,12 @@ package Graph;
 /**
  * Java: Kruskal算法生成最小生成树(邻接矩阵)
  *
- * @author skywang
+ * @author FamxForx
  * @date 2014/04/24
  */
 
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class MatrixUDG {
 
@@ -23,19 +23,19 @@ public class MatrixUDG {
     public MatrixUDG() {
 
         // 输入"顶点数"和"边数"
-        System.out.printf("input vertex number: ");
+        Utils.log("input vertex number: ");
         int vlen = readInt();
-        System.out.printf("input edge number: ");
+        Utils.log("input edge number: ");
         int elen = readInt();
         if ( vlen < 1 || elen < 1 || (elen > (vlen*(vlen - 1)))) {
-            System.out.printf("input error: invalid parameters!\n");
+            Utils.log("input error: invalid parameters!\n");
             return ;
         }
         
         // 初始化"顶点"
         mVexs = new char[vlen];
         for (int i = 0; i < mVexs.length; i++) {
-            System.out.printf("vertex(%d): ", i);
+        	Utils.log("vertex(%d): ", i);
             mVexs[i] = readChar();
         }
 
@@ -44,7 +44,7 @@ public class MatrixUDG {
         mMatrix = new int[vlen][vlen];
         for (int i = 0; i < vlen; i++) {
             for (int j = 0; j < vlen; j++) {
-                if (i==j)
+                if (i==j)//如果经过的边的长度相同，则返回0
                     mMatrix[i][j] = 0;
                 else
                     mMatrix[i][j] = INF;
@@ -53,7 +53,7 @@ public class MatrixUDG {
         // 2. 初始化"边"的权值: 根据用户的输入进行初始化
         for (int i = 0; i < elen; i++) {
             // 读取边的起始顶点,结束顶点,权值
-            System.out.printf("edge(%d):", i);
+            Utils.log("edge(%d):", i);
             char c1 = readChar();       // 读取"起始顶点"
             char c2 = readChar();       // 读取"结束顶点"
             int weight = readInt();     // 读取"权值"
@@ -61,7 +61,7 @@ public class MatrixUDG {
             int p1 = getPosition(c1);
             int p2 = getPosition(c2);
             if (p1==-1 || p2==-1) {
-                System.out.printf("input error: invalid edge!\n");
+                Utils.log("input error: invalid edge!\n");
                 return ;
             }
 
@@ -116,7 +116,6 @@ public class MatrixUDG {
      */
     private char readChar() {
         char ch='0';
-
         do {
             try {
                 ch = (char)System.in.read();
@@ -132,7 +131,8 @@ public class MatrixUDG {
      * 读取一个输入字符
      */
     private int readInt() {
-        Scanner scanner = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
@@ -172,7 +172,7 @@ public class MatrixUDG {
     private void DFS(int i, boolean[] visited) {
 
         visited[i] = true;
-        System.out.printf("%c ", mVexs[i]);
+        Utils.log("%c ", mVexs[i]);
         // 遍历该顶点的所有邻接顶点。若是没有访问过，那么继续往下走
         for (int w = firstVertex(i); w >= 0; w = nextVertex(i, w)) {
             if (!visited[w])
@@ -190,12 +190,12 @@ public class MatrixUDG {
         for (int i = 0; i < mVexs.length; i++)
             visited[i] = false;
 
-        System.out.printf("DFS: ");
+        Utils.log("DFS: ");
         for (int i = 0; i < mVexs.length; i++) {
             if (!visited[i])
                 DFS(i, visited);
         }
-        System.out.printf("\n");
+        Utils.log("\n");
     }
 
     /*
@@ -210,11 +210,11 @@ public class MatrixUDG {
         for (int i = 0; i < mVexs.length; i++)
             visited[i] = false;
 
-        System.out.printf("BFS: ");
+        Utils.log("BFS: ");
         for (int i = 0; i < mVexs.length; i++) {
             if (!visited[i]) {
                 visited[i] = true;
-                System.out.printf("%c ", mVexs[i]);
+                Utils.log("%c ", mVexs[i]);
                 queue[rear++] = i;  // 入队列
             }
 
@@ -223,24 +223,24 @@ public class MatrixUDG {
                 for (int k = firstVertex(j); k >= 0; k = nextVertex(j, k)) { //k是为访问的邻接顶点
                     if (!visited[k]) {
                         visited[k] = true;
-                        System.out.printf("%c ", mVexs[k]);
+                        Utils.log("%c ", mVexs[k]);
                         queue[rear++] = k;
                     }
                 }
             }
         }
-        System.out.printf("\n");
+        Utils.log("\n");
     }
 
     /*
      * 打印矩阵队列图
      */
     public void print() {
-        System.out.printf("Martix Graph:\n");
+        Utils.log("Martix Graph:\n");
         for (int i = 0; i < mVexs.length; i++) {
             for (int j = 0; j < mVexs.length; j++)
-                System.out.printf("%10d ", mMatrix[i][j]);
-            System.out.printf("\n");
+                Utils.log("%10d ", mMatrix[i][j]);
+            Utils.log("\n");
         }
     }
 
@@ -313,19 +313,19 @@ public class MatrixUDG {
             sum += min;
         }
         // 打印最小生成树
-        System.out.printf("PRIM(%c)=%d: ", mVexs[start], sum);
+        Utils.log("PRIM(%c)=%d: ", mVexs[start], sum);
         for (int i = 0; i < index; i++)
-            System.out.printf("%c ", prims[i]);
-        System.out.printf("\n");
+            Utils.log("%c ", prims[i]);
+        Utils.log("\n");
     }
 
     /*
      * 克鲁斯卡尔（Kruskal)最小生成树
      */
     public void kruskal() {
-        int index = 0;                      // rets数组的索引
-        int[] vends = new int[mEdgNum];     // 用于保存"已有最小生成树"中每个顶点在该最小树中的终点。
-        EData[] rets = new EData[mEdgNum];  // 结果数组，保存kruskal最小生成树的边
+        int index = 0;                      // rets数组的索引index
+        int[] vends = new int[mEdgNum];     // 用于保存"已有最小生成树"中每个顶点在该最小树中的终点vends,mEdgNum表示边的集合。
+        EData[] rets = new EData[mEdgNum];  // 结果数组，保存kruskal最小生成树的边,mEdgNum表示边的集合。
         EData[] edges;                      // 图对应的所有边
 
         // 获取"图中所有的边"
@@ -343,17 +343,19 @@ public class MatrixUDG {
             if (m != n) {
                 vends[m] = n;                       // 设置m在"已有的最小生成树"中的终点为n
                 rets[index++] = edges[i];           // 保存结果
+                
             }
+            
         }
 
-        // 统计并打印"kruskal最小生成树"的信息
+        // 统计并打印"Kruskal最小生成树"的信息
         int length = 0;
         for (int i = 0; i < index; i++)
             length += rets[i].weight;
-        System.out.printf("Kruskal=%d: ", length);
+        Utils.log("Kruskal=%d: ", length);
         for (int i = 0; i < index; i++)
-            System.out.printf("(%c,%c) ", rets[i].start, rets[i].end);
-        System.out.printf("\n");
+            Utils.log("(%c,%c) ", rets[i].start, rets[i].end);
+        Utils.log("\n");
     }
 
     /* 
@@ -414,9 +416,7 @@ public class MatrixUDG {
             this.weight = weight;
         }
     };
-
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         char[] vexs = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         int matrix[][] = {
                  /*A*//*B*//*C*//*D*//*E*//*F*//*G*/
@@ -427,18 +427,98 @@ public class MatrixUDG {
           /*E*/ { INF, INF,   5,   4,   0,   2,   8},
           /*F*/ {  16,   7,   6, INF,   2,   0,   9},
           /*G*/ {  14, INF, INF, INF,   8,   9,   0}};
-        MatrixUDG pG;
-
-        // 自定义"图"(输入矩阵队列)
-        //pG = new MatrixUDG();
-        // 采用已有的"图"
-        pG = new MatrixUDG(vexs, matrix);
-
-        pG.print();   // 打印图
-        pG.DFS();     // 深度优先遍历
-        pG.BFS();     // 广度优先遍历
-        pG.prim(0);   // prim算法生成最小生成树
-        pG.kruskal();   // Kruskal算法生成最小生成树
+        
+        
+       
+        while(true) {
+        	System.out.println("Enter the first letter of");
+            System.out.println("c,n:");
+        	char choice = getChar();
+        	switch(choice) {
+        		case 'c':
+        			System.out.println("=============== 采用自定义图 ==============");
+        			System.out.println("Enter the second letter of");
+        			System.out.println("printCustom,print,dfs,bfs,prim,krukal:");
+        			char choice1 = getChar();
+        			MatrixUDG pG;
+        			pG = new MatrixUDG();
+        			switch(choice1) {
+        				case 'p':
+        					System.out.println("=============== 打印图 =========");
+        					pG.print();
+        					break;
+        				case 'd':
+        					System.out.println("========== 深度优先遍历 ==============");
+        					pG.DFS();
+        					break;
+        				case 'b':
+        					System.out.println("============= 广度优先遍历 ===============");
+        					pG.BFS();
+        					break;
+        				case 'm':
+        					System.out.println("============ 普利姆算法 ===============");
+        					pG.prim(0);
+        					break;
+        				case 'k':
+        					System.out.println("============ 克鲁斯卡尔算法 ===============");
+        					pG.kruskal();
+        					break;
+        				default:
+        					System.out.println("Invalid Entry\n");
+        					break;
+        			}
+        			break;
+        		case 'n':
+        			System.out.println("============== 采用已有的图 ===================");
+        			pG = new MatrixUDG(vexs,matrix);
+        			System.out.println("Enter the second letter of");
+        			System.out.println("printCustom,print,dfs,bfs,prim,krukal:");
+        			char choice2 = getChar();
+        			switch(choice2) {
+        				case 'p':
+        					System.out.println("=============== 打印图 =========");
+        					pG.print();
+        					break;
+        				case 'd':
+        					System.out.println("========== 深度优先遍历 ==============");
+        					pG.DFS();
+        					break;
+        				case 'b':
+        					System.out.println("============= 广度优先遍历 ===============");
+        					pG.BFS();
+        					break;
+        				case 'm':
+        					System.out.println("============ 普利姆算法 ===============");
+        					pG.prim(0);
+        					break;
+        				case 'k':
+        					System.out.println("============ 克鲁斯卡尔算法 ===============");
+        					pG.kruskal();
+        					break;
+        				default:
+        					System.out.println("Invalid Entry\n");
+        					break;
+        			}
+        			break;
+        		default:
+        			System.out.println("Invalid Entry\n");
+        			break;
+        	}
+        }
     }
+    public static String getString() throws IOException{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		String s = br.readLine();
+		return s;
+	}
+	public static char getChar() throws IOException{
+		String s = getString();
+		return s.charAt(0);
+	}
+	public static int getInt() throws IOException{
+		String s = getString();
+		return Integer.parseInt(s);
+	}
 }
 
