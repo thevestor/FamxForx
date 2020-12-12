@@ -69,7 +69,6 @@ public class MatrixUDG {
             mMatrix[p2][p1] = weight;
         }
     }
-
     /*
      * 创建图(用已提供的矩阵)
      *
@@ -324,7 +323,8 @@ public class MatrixUDG {
      */
     public void kruskal() {
         int index = 0;                      // rets数组的索引index
-        int[] vends = new int[mEdgNum];     // 用于保存"已有最小生成树"中每个顶点在该最小树中的终点vends,mEdgNum表示边的集合。
+        int[] vends = new int[mEdgNum];     // 用于保存"已有最小生成树"中每个顶点在该最小树中的
+        									// 终点vends,mEdgNum表示边的集合。
         EData[] rets = new EData[mEdgNum];  // 结果数组，保存kruskal最小生成树的边,mEdgNum表示边的集合。
         EData[] edges;                      // 图对应的所有边
 
@@ -438,7 +438,7 @@ public class MatrixUDG {
         		case 'c':
         			System.out.println("=============== 采用自定义图 ==============");
         			System.out.println("Enter the second letter of");
-        			System.out.println("printCustom,print,dfs,bfs,prim,krukal:");
+        			System.out.println("print,prim,krukal:");
         			char choice1 = getChar();
         			MatrixUDG pG;
         			pG = new MatrixUDG();
@@ -472,7 +472,7 @@ public class MatrixUDG {
         			System.out.println("============== 采用已有的图 ===================");
         			pG = new MatrixUDG(vexs,matrix);
         			System.out.println("Enter the second letter of");
-        			System.out.println("printCustom,print,dfs,bfs,prim,krukal:");
+        			System.out.println("print,dfs,bfs,prim,krukal:");
         			char choice2 = getChar();
         			switch(choice2) {
         				case 'p':

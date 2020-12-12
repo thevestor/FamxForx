@@ -4,14 +4,16 @@ package Graph;
  * 一条边，可以根据需要继承此类
  * @param <V>
  */
-public class Edge<V> {
+@SuppressWarnings("rawtypes")
+public class Edge<V> implements Comparable<Edge>{
     /**起点*/
     private V src;
     /**终点*/
     private V dest;
     /**权值*/
     private double weight;
-    
+    /**root**/
+    private V root;
     /**
      * 不带权值的一条边
      * @param src
@@ -62,4 +64,21 @@ public class Edge<V> {
         String ret = String.format("src : %s , dest : %s , weight : %s", src, dest, weight);
         return ret;
     }
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public int compareTo(Edge other) {
+		// TODO Auto-generated method stub
+		return (int) (this.weight - other.weight);
+	}
+
+	public V getRoot() {
+		return root;
+	}
+
+	public void setRoot(V root) {
+		this.root = root;
+	}
+	
+	
 }

@@ -6,7 +6,7 @@ public class Utils {
      * @param t
      */
     public static void log(Object t) {
-        System.out.println(t);
+        System.out.print(t);
     }
     
     /**
@@ -15,6 +15,6 @@ public class Utils {
      */
     public static void log(String format, Object... args) {
         String str = String.format(format, args);
-        System.out.println(str);
+        System.out.print(str);
     }
 }

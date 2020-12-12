@@ -1,5 +1,7 @@
 package Graph;
 import java.util.*;
+
+import VertalGraph.StackX;
 /**
  * 邻接链表（Adjacency List）实现的有向图
  * @param <V>
@@ -14,7 +16,6 @@ public class ListDGraph<V> implements DGraph<V>{
         private V v;
         /**以此顶点为起点的边的集合，是一个列表，列表的每一项是一条边*/
         private List<Edge<V>> mEdgeList;
-        
         /**
          * 构造一个新的顶点对象
          * @param v
@@ -40,12 +41,13 @@ public class ListDGraph<V> implements DGraph<V>{
             Utils.log("add edge : %s", e);
             if(getEdge(e.getDest()) == null) {
                 mEdgeList.add(e);
+                
             } else {
                 Utils.log("edge exist : %s", e);
             }
-        }
+        }       
         
-        /**
+		/**
          * 读取某条边
          * @param dest
          * @return
@@ -310,6 +312,7 @@ public class ListDGraph<V> implements DGraph<V>{
         return ret;
     }
     
+    
     /**
      * 删除以某个点作为重点的边
      * @param v
@@ -321,7 +324,30 @@ public class ListDGraph<V> implements DGraph<V>{
             }
         }
     }
-    
+    /**
+     * 
+     * @param e
+     * @return
+     */
+	public static List<Edge> miniSpanningTree(List<Edge> e){
+    	List<Edge> result = new ArrayList<>();
+    	Collections.sort(e);
+    	for(Edge edge : e) {
+    		Edge u = (Edge) edge.getSource();
+    		Edge v = (Edge) edge.getDest();
+    		// 如果 u 和 v 已经在同一颗树里则跳过
+            if (u.getRoot() == v.getRoot()) {
+                continue;
+            }
+            result.add(edge);
+            // 将 u 和 v 放在同一颗树里
+            // 合并两个树最直接的办法就是使用一个新的根结点，然后连接两个子树
+            TreeNode newRoot = new TreeNode();
+            u.setRoot(newRoot);
+            v.setRoot(newRoot);
+    	}
+    	return result;
+    }
     /**
      * 判断某个端点是否在某个列表里
      * @param v
@@ -343,4 +369,10 @@ public class ListDGraph<V> implements DGraph<V>{
         
         return ret;
     }
+
+	@Override
+	public Edge<V> miniSpanningTree(Edge<V> e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

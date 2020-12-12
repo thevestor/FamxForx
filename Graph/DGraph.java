@@ -62,4 +62,8 @@ public interface DGraph<V> {
      * 将图转换为无环图
      */
     public void convertDAG();
+    /**
+     * 最小生成树
+     */
+    public Edge<V> miniSpanningTree(Edge<V> e);
 }

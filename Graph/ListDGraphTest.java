@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 public class ListDGraphTest {
 
     DGraph<String> mDG = new ListDGraph<String>();
+	private Edge<String> e;
     
     @Before
     public void setUp() throws Exception {
@@ -34,15 +35,15 @@ public class ListDGraphTest {
 
         Utils.log("===============add edge=================");
         
-        mDG.add(new Edge<String>("1", "2"));
-        mDG.add(new Edge<String>("1", "3"));
-        mDG.add(new Edge<String>("2", "4"));
-        mDG.add(new Edge<String>("2", "5"));
-        mDG.add(new Edge<String>("3", "6"));
-        mDG.add(new Edge<String>("3", "7"));
-        mDG.add(new Edge<String>("4", "8"));
-        mDG.add(new Edge<String>("8", "5"));
-        mDG.add(new Edge<String>("6", "7")); 
+        mDG.add(new Edge<String>("1", "2",1));
+        mDG.add(new Edge<String>("1", "3",1));
+        mDG.add(new Edge<String>("2", "4",1));
+        mDG.add(new Edge<String>("2", "5",1));
+        mDG.add(new Edge<String>("3", "6",1));
+        mDG.add(new Edge<String>("3", "7",1));
+        mDG.add(new Edge<String>("4", "8",1));
+        mDG.add(new Edge<String>("8", "5",1));
+        mDG.add(new Edge<String>("6", "7",1)); 
         
         Utils.log("=======================================================");
         
@@ -54,7 +55,7 @@ public class ListDGraphTest {
         	char choice = getChar();
         	switch(choice) {
         		case 't':
-        			Utils.log("===============test travelling=================");
+        			Utils.log("===============Beginning to first vertex to travels=================");
         	       
         	        Iterator<String> it = mDG.iterator(DGraph.ITERATOR_TYPE_BFS, "1");
         	        
@@ -72,7 +73,7 @@ public class ListDGraphTest {
         			 		mDG.get(0);
         			 		break;
         			 	case 's':
-        			 		Utils.log("================ get first and second vertex is =============");
+        			 		Utils.log("================ get first to second edge =============");
         			 		mDG.get(0, 1);
         			 		break;
         			 	default:
@@ -98,13 +99,22 @@ public class ListDGraphTest {
         			}
         			break;
         		case 'q':
-        			Utils.log("====================== Travel2 ================");
+        			Utils.log("====================== Beginning to the second vertex to travel ================");
         			it = mDG.iterator(DGraph.ITERATOR_TYPE_BFS, "2");
         	        while(it.hasNext()) {
         	            String s = it.next();
         	            Utils.log("next : %s", s);
         	        }
         	        break;
+        		case 'm':
+        			Utils.log("========================== create minTree =============================");
+        			it = mDG.iterator(DGraph.ITERATOR_TYPE_BFS, "2");
+        	        while(it.hasNext()) {
+        	            String s = it.next();
+        	            Utils.log("next : %s", s);
+        	        }
+        			mDG.miniSpanningTree(e);
+        			break;
         	    default:
         	    	System.out.println("Invalid Entry\n");
         	    	break;
