@@ -1,5 +1,6 @@
 package VertalGraph;
 
+
 public class Vertex {
 	public char label;
 	public boolean wasVisited;
