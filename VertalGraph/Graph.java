@@ -1,5 +1,7 @@
 package VertalGraph;
 
+import java.io.*;
+
 public class Graph {
 	
 	private final int MAX_VERTS = 20;
@@ -89,7 +91,7 @@ public class Graph {
 				currentVert = indexMin;  //赋值给最近的顶点
 				startToCurrent = sPath[indexMin].distance;
 			}
-			vertexList[currentVert].wasVisited = true;
+			vertexList[currentVert].wasVisited = true;//如果最近的顶点在树中，已找到该结点，标记当前顶点
 			nTree ++;
 			adjust_sPath(); //更新所有 sPath[]数组的内容
 		}
@@ -97,7 +99,7 @@ public class Graph {
 		
 		nTree = 0; //清空树
 		for(int j = 0;j < nVerts;j++) {
-			vertexList[j].wasVisited = false;
+			vertexList[j].wasVisited = false;//将所有的顶点都置为空
 		}
 	}
 	//更新sPath()数组
@@ -117,7 +119,7 @@ public class Graph {
 			if(startToFringe < sPathDist)//比较startToFringe与sPath[]数组的当前项进行比较，如果短，则替换当前项
 			{
 				sPath[column].parentVert = currentVert;
-				sPath[column].distance = startToFringe;
+				sPath[column].distance = startToFringe;//替换操作
 			}
 			column ++;
 		}
@@ -147,7 +149,7 @@ public class Graph {
 		return indexMin; //返回最短路径的索引
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		Graph graph = new Graph();
 		graph.addVertex('A'); // 0 (start)
 		graph.addVertex('B'); // 1
@@ -164,10 +166,38 @@ public class Graph {
 		graph.addEdge(3, 4, 70); // DE 70
 		graph.addEdge(4, 1, 50); // EB 50
 		
-		//System.out.print("Visits:");
-		//graph.dfs();
-		System.out.println("最短路径为:");
-		graph.path();
-		System.out.println();
+		while(true) {
+			System.out.println("Please enter the letter of ");
+			System.out.println("print,path:");
+			char choice = getChar();
+			switch(choice) {
+				case 'h':
+					System.out.println("最短路径为:");
+					graph.path();
+					break;
+				case 'p':
+					System.out.println("深度优先遍历的结果为:");
+					graph.dfs();
+					break;
+				default:
+					System.out.println("Invalid Entry\n");
+					break;
+			}	
+		}
+		
+	}
+	public static String getString() throws IOException{
+		InputStreamReader  isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		String s = br.readLine();
+		return s;
+	}
+	public static char getChar() throws IOException{
+		String s = getString();
+		return s.charAt(0);
+	}
+	public static int getInt() throws IOException{
+		String s = getString();
+		return Integer.parseInt(s);
 	}
 }
